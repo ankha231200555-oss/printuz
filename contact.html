@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – Printuz LTD</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#4FA6A6;
+    --teal-dark:#3D8C8C;
+    --ink:#20242B;
+    --muted:#6B7280;
+    --line:#E7E9EC;
+    --soft-bg:#EAF3F3;
+    --black:#111417;
+  }
+  body{ font-family:'Inter', sans-serif; color:var(--ink); }
+  h1,h2,h3,.brand-word{ font-family:'Poppins', sans-serif; }
+  a{ text-decoration:none; }
+  .eyebrow{ color:var(--teal-dark); font-weight:700; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; }
+  .accent{ color:var(--teal); }
+
+  /* Top strip + header + nav (shared) */
+  .top-strip{ background:var(--teal); color:#fff; font-size:.78rem; letter-spacing:.06em; text-align:center; padding:.4rem 0; font-weight:600; }
+  .site-header{ background:#fff; padding:1rem 0; }
+  .logo-img{ height:48px; }
+  .header-search{ max-width:300px; width:100%; }
+  .header-search .form-control{ border-radius:999px 0 0 999px; border-color:var(--line); border-right:none; }
+  .header-search .btn{ border-radius:0 999px 999px 0; background:#fff; border:1px solid var(--line); border-left:none; color:var(--muted); }
+  .login-link{ color:var(--ink); font-weight:600; letter-spacing:.04em; font-size:.85rem; }
+  .login-link:hover{ color:var(--teal-dark); }
+  .main-nav{ background:var(--teal); }
+  .main-nav a{ color:#fff; font-weight:600; font-size:.9rem; padding:.8rem .9rem; display:inline-block; }
+  .main-nav a:hover{ background:rgba(255,255,255,.12); }
+  .main-nav a.active{ background:rgba(255,255,255,.18); }
+
+  /* Hero */
+  .faq-hero{ background:var(--soft-bg); padding:4rem 0 3.5rem; text-align:center; }
+  .support-pill{
+    display:inline-block; border:1px solid var(--line); border-radius:8px;
+    padding:.35rem 1rem; font-size:.75rem; font-weight:700; letter-spacing:.1em;
+    color:var(--teal-dark); background:#fff; margin-bottom:1.2rem;
+  }
+  .faq-hero h1{ font-weight:800; font-size:clamp(2rem, 4vw, 2.7rem); margin-bottom:1rem; }
+  .faq-hero p{ color:var(--muted); max-width:600px; margin:0 auto 1.6rem; }
+  .filter-chip{
+    background:#fff; border:1px solid var(--line); border-radius:8px;
+    padding:.55rem 1.1rem; font-size:.75rem; font-weight:700; letter-spacing:.06em;
+    color:var(--ink); display:inline-block;
+  }
+
+  /* FAQ list */
+  .faq-body{ padding:4rem 0; }
+  .faq-item{ border-bottom:1px solid var(--line); }
+  .faq-item summary{
+    list-style:none; cursor:pointer; padding:1.15rem 0;
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    font-weight:600; font-size:.98rem; color:var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-toggle{
+    width:30px; height:30px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    color:var(--muted); font-size:1rem; transition:all .15s ease;
+  }
+  .faq-item[open] .faq-toggle{
+    background:var(--teal); border-color:var(--teal); color:#fff; transform:rotate(45deg);
+  }
+  .faq-item .faq-answer{ color:var(--muted); font-size:.92rem; line-height:1.75; padding-bottom:1.3rem; max-width:640px; }
+  .faq-answer a{ color:var(--teal-dark); font-weight:600; }
+
+  /* Sidebar */
+  .help-card-dark{
+    background:var(--black); border-radius:14px; padding:1.8rem; color:#fff; position:relative; overflow:hidden;
+  }
+  .help-card-dark .ring-deco{
+    position:absolute; top:-30px; right:-30px; width:120px; height:120px;
+    border:1px solid rgba(255,255,255,.12); border-radius:50%;
+  }
+  .help-icon{
+    width:42px;height:42px;border-radius:50%; background:var(--teal);
+    display:flex;align-items:center;justify-content:center; font-weight:700; margin-bottom:1rem;
+  }
+  .help-card-dark .eyebrow{ color:var(--teal); }
+  .help-card-dark h3{ font-weight:700; font-size:1.3rem; margin-bottom:.6rem; }
+  .help-card-dark p{ color:rgba(255,255,255,.65); font-size:.88rem; margin-bottom:1.3rem; }
+  .btn-help-sidebar{
+    background:var(--teal); color:#fff; font-weight:600; border-radius:8px;
+    padding:.65rem 1.2rem; display:flex; align-items:center; justify-content:space-between;
+  }
+  .btn-help-sidebar:hover{ background:var(--teal-dark); color:#fff; }
+
+  .side-list{ margin-top:1.5rem; }
+  .side-list-item{ border-top:1px solid var(--line); padding:1rem 0; }
+  .side-list-item .mini-num{ color:var(--teal-dark); font-weight:700; font-size:.72rem; }
+  .side-list-item h6{ font-weight:700; margin:.3rem 0 .2rem; font-size:.92rem; }
+  .side-list-item p{ color:var(--muted); font-size:.83rem; margin:0; }
+
+  /* Bottom CTA band */
+  .contact-cta{ background:var(--soft-bg); padding:2.8rem 0; }
+  .contact-cta h2{ font-weight:700; font-size:1.5rem; margin:.3rem 0 .4rem; }
+  .contact-cta p{ color:var(--muted); font-size:.92rem; margin:0; }
+  .btn-email{
+    background:var(--teal); color:#fff; font-weight:600; border-radius:8px;
+    padding:.75rem 1.6rem; display:inline-flex; align-items:center; gap:.6rem; white-space:nowrap;
+  }
+  .btn-email:hover{ background:var(--teal-dark); color:#fff; }
+
+  /* Footer */
+  .site-footer{ background:#fff; padding-top:2.5rem; border-top:1px solid var(--line); }
+  .footer-logo{ height:52px; }
+  .help-title{
+    color:var(--teal-dark); font-weight:700; font-size:.85rem; letter-spacing:.06em;
+    text-transform:uppercase; border-bottom:2px solid var(--teal); display:inline-block;
+    padding-bottom:.4rem; margin-bottom:1rem;
+  }
+  .site-footer a{ color:var(--ink); font-size:.92rem; }
+  .site-footer a:hover{ color:var(--teal-dark); }
+  .footer-address{ color:var(--muted); font-size:.9rem; line-height:1.7; }
+  .footer-bottom{ border-top:1px solid var(--line); margin-top:2rem; padding:1.2rem 0; font-size:.85rem; color:var(--muted); }
+    .sticky-header-wrap{
+    background: #fff;
+  }
+  .sticky-header-wrap.is-sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    animation: stickySlideDown .3s ease;
+  }
+  @keyframes stickySlideDown{
+    from{ transform: translateY(-100%); }
+    to{ transform: translateY(0); }
+  }
+  .sticky-spacer{
+    display: none;
+    height: 0;
+  }
+  .sticky-spacer.is-active{
+    display: block;
+  }
+</style>
+<link rel="stylesheet" href="assets/site-search.css?v=5">
+<script src="assets/site-search.js?v=4" defer></script>
+<link rel="stylesheet" href="assets/site-auth.css?v=1">
+<script src="assets/site-auth.js?v=3" defer></script>
+<link href="assets/site-footer-pay.css?v=4" rel="stylesheet">
+<link href="assets/site-header-frame.css?v=11" rel="stylesheet">
+<link href="assets/site-back-top.css?v=1" rel="stylesheet">
+<link rel="stylesheet" href="assets/site-mobile-nav.css?v=2">
+<script src="assets/site-mobile-nav.js?v=1" defer></script>
+</head>
+<body>
+
+<div class="site-header-frame">
+<div class="top-strip">PRINTUZ LTD</div>
+
+<div class="sticky-header-wrap">
+<header class="site-header">
+  <div class="container d-flex align-items-center flex-wrap gap-3">
+    <a href="index.html" class="site-brand" aria-label="Printuz Fulfillment">
+      <img src="assets/logo-official.png?v=1" alt="" class="site-brand-logo" width="240" height="52">
+    </a>
+    <form class="header-search ms-md-4" role="search">
+      <input class="form-control" type="search" placeholder="Search...">
+      <button class="btn" type="submit" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <line x1="16.65" y1="16.65" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+    <a href="#login" class="login-link ms-auto">LOGIN</a>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <a href="shop.html#/category/pod-products">Catalog</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="news.html">News</a>
+    <a href="#app">App Login</a>
+    <a href="extension.html">Extension</a>
+    <a href="recruit.html">Tuyển Dụng</a>
+  </div>
+</nav>
+</div>
+</div>
+<div class="sticky-spacer" id="stickySpacer"></div>
+
+<!-- Hero -->
+<section class="faq-hero" id="top">
+  <div class="container">
+    <span class="support-pill">PRINTUZ SUPPORT</span>
+    <h1>Frequently Asked <span class="accent">Questions</span></h1>
+    <p>Find quick answers about fulfillment, shipping, orders, payments, and our services.</p>
+    <div class="d-flex justify-content-center gap-2 flex-wrap">
+      <span class="filter-chip">FULFILLMENT</span>
+      <span class="filter-chip">ORDERS</span>
+      <span class="filter-chip">SHIPPING</span>
+      <span class="filter-chip">PAYMENT</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ body -->
+<section class="faq-body">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-8">
+        <div class="eyebrow mb-2">FAQ</div>
+        <h2 class="fw-bold mb-2">Common Questions</h2>
+        <p class="text-muted mb-4">Please review our frequently asked questions before contacting us.</p>
+
+        <details class="faq-item">
+          <summary>
+            What are the delivery charges for orders from Printuz?
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">Delivery charges depend on the product, destination, shipping method, package weight, and fulfillment location. Shipping costs are calculated according to the specific order and service selected.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Which payment methods are accepted by Printuz?
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">Available payment methods may vary depending on your account, service, and order. Please contact our team if you need information about the available payment options for your account.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How long will delivery take?
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">Delivery time depends on the product, production time, fulfillment location, destination, and shipping method selected. Estimated delivery information is provided based on the specific order.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How secure is shopping with Printuz? Is my data protected?
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">We take reasonable measures to protect information handled through our website and services. Access to information is limited to authorized personnel and service providers where necessary to operate our services.<br><br>For more information, please review our <a href="privacy.html">Privacy Policy</a>.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            What exactly happens after ordering?
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">After an order is received, the order information is reviewed and processed according to the selected fulfillment service. Production, packaging, and shipping are then handled through the applicable fulfillment workflow.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Do I receive an invoice for my order?
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">Order and billing information is managed according to your Printuz account and service arrangement. If you need a specific invoice or billing document, please contact our support team.</div>
+        </details>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="help-card-dark">
+          <div class="ring-deco"></div>
+          <div class="help-icon">@</div>
+          <div class="eyebrow mb-2">NEED MORE HELP?</div>
+          <h3>Talk to our team.</h3>
+          <p>Can't find the answer you're looking for? Our team is ready to help with your fulfillment questions.</p>
+          <a href="mailto:Contact@Printuz.com" class="btn-help-sidebar">Contact Us <span>→</span></a>
+        </div>
+
+        <div class="side-list">
+          <div class="side-list-item">
+            <div class="mini-num">01</div>
+            <h6>Fulfillment</h6>
+            <p>POD &amp; dropshipping fulfillment solutions.</p>
+          </div>
+          <div class="side-list-item">
+            <div class="mini-num">02</div>
+            <h6>Global Network</h6>
+            <p>Connected fulfillment locations and partners.</p>
+          </div>
+          <div class="side-list-item">
+            <div class="mini-num">03</div>
+            <h6>Seller Support</h6>
+            <p>Support for online sellers and e-commerce businesses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="contact-cta">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
+    <div>
+      <div class="eyebrow mb-1">PRINTUZ LTD</div>
+      <h2>Have a question about fulfillment?</h2>
+      <p>Send us a message and our team will get back to you.</p>
+    </div>
+    <a href="mailto:Contact@Printuz.com" class="btn-email">Email Us <span>→</span></a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer pb-4">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-7">
+        <a href="index.html" class="site-brand site-brand--footer mb-3" aria-label="Printuz Fulfillment">
+          <img src="assets/logo-official.png?v=1" alt="" class="site-brand-logo" width="320" height="88">
+        </a>
+        <div class="fw-bold mb-1">Printuz LTD</div>
+        <div class="text-muted mb-2" style="font-size:.9rem;">Fulfillment &amp; E-Commerce Solutions</div>
+        <div class="fw-bold mb-1" style="font-size:.85rem; letter-spacing:.06em;">ADDRESS</div>
+        <p class="footer-address mb-2">
+          73, 4C Street, Dai Phuc Residential Area,<br>
+          Binh Hung Commune, Binh Chanh District,<br>
+          Ho Chi Minh City, Vietnam
+        </p>
+        <a href="mailto:Contact@Printuz.com">Contact@Printuz.com</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="help-title">Help Center</div>
+        <ul class="list-unstyled">
+          <li class="mb-2 pb-2 border-bottom"><a href="about.html">About</a></li>
+          <li class="mb-2 pb-2 border-bottom"><a href="news.html">Blog</a></li>
+          <li class="mb-2 pb-2 border-bottom"><a href="contact.html">Contact</a></li>
+          <li class="mb-2 pb-2"><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <div>Copyright 2026 © <strong>Printuz ltd</strong></div>
+            <div class="footer-pay-badges">
+        <span class="pay-badge pay-visa">VISA</span>
+        <span class="pay-badge pay-paypal"><span class="pp-pay">Pay</span><span class="pp-pal">Pal</span></span>
+        <span class="pay-badge pay-stripe">stripe</span>
+        <span class="pay-badge pay-mastercard"><span class="mc-circles"><span class="mc-c1"></span><span class="mc-c2"></span></span><span class="mc-text">MasterCard</span></span>
+        <span class="pay-badge pay-cod">CASH ON<br>DELIVERY</span>
+      </div>
+</div>
+  </div>
+</footer>
+
+<a href="#top" class="back-top" id="backTop" aria-label="Back to top">↑</a>
+<script src="assets/site-back-top.js?v=1" defer></script>
+
+<script>
+(function(){
+  var wrap = document.querySelector('.sticky-header-wrap');
+  var spacer = document.getElementById('stickySpacer');
+  if(!wrap || !spacer) return;
+  var threshold = 220; // px scrolled before the sticky nav pops back in
+  var ticking = false;
+
+  function onScroll(){
+    var current = window.scrollY || window.pageYOffset;
+    if(current > threshold){
+      if(!wrap.classList.contains('is-sticky')){
+        spacer.style.height = wrap.offsetHeight + 'px';
+        wrap.classList.add('is-sticky');
+        spacer.classList.add('is-active');
+      }
+    } else {
+      wrap.classList.remove('is-sticky');
+      spacer.classList.remove('is-active');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – Printuz LTD</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#4FA6A6;
+    --teal-dark:#3D8C8C;
+    --ink:#20242B;
+    --muted:#6B7280;
+    --line:#E7E9EC;
+    --soft-bg:#EAF3F3;
+    --black:#111417;
+  }
+  body{ font-family:'Inter', sans-serif; color:var(--ink); }
+  h1,h2,h3,.brand-word{ font-family:'Poppins', sans-serif; }
+  a{ text-decoration:none; }
+  .eyebrow{
+    color:var(--teal-dark); font-weight:700; font-size:.78rem;
+    letter-spacing:.12em; text-transform:uppercase;
+  }
+  .accent{ color:var(--teal); }
+
+  /* Top strip + header + nav (shared) */
+  .top-strip{ background:var(--teal); color:#fff; font-size:.78rem; letter-spacing:.06em; text-align:center; padding:.4rem 0; font-weight:600; }
+  .site-header{ background:#fff; padding:1rem 0; }
+  .logo-img{ height:48px; }
+  .header-search{ max-width:300px; width:100%; }
+  .header-search .form-control{ border-radius:999px 0 0 999px; border-color:var(--line); border-right:none; }
+  .header-search .btn{ border-radius:0 999px 999px 0; background:#fff; border:1px solid var(--line); border-left:none; color:var(--muted); }
+  .login-link{ color:var(--ink); font-weight:600; letter-spacing:.04em; font-size:.85rem; }
+  .login-link:hover{ color:var(--teal-dark); }
+  .main-nav{ background:var(--teal); }
+  .main-nav a{ color:#fff; font-weight:600; font-size:.9rem; padding:.8rem .9rem; display:inline-block; }
+  .main-nav a:hover{ background:rgba(255,255,255,.12); }
+  .main-nav a.active{ background:rgba(255,255,255,.18); }
+
+  /* Hero */
+  .policy-hero{ background:var(--soft-bg); padding:4rem 0 3.5rem; text-align:center; }
+  .policy-hero h1{
+    font-weight:800; font-size:clamp(2rem, 4vw, 2.9rem); color:var(--ink); margin-bottom:1rem;
+  }
+  .policy-hero p{ color:var(--muted); max-width:600px; margin:0 auto 1.5rem; }
+  .effective-pill{
+    display:inline-block; background:#fff; border:1px solid var(--line); border-radius:999px;
+    padding:.5rem 1.2rem; font-size:.85rem; color:var(--ink);
+  }
+  .effective-pill strong{ color:var(--teal-dark); }
+
+  /* Policy sections */
+  .policy-section{ padding:3rem 0; border-bottom:1px solid var(--line); }
+  .policy-section .container{ max-width:900px; }
+  .policy-num{ color:var(--teal-dark); font-weight:800; font-size:.85rem; line-height:1.2; }
+  .policy-body{ padding-left:0; }
+  .policy-body h2{ font-weight:700; font-size:1.5rem; margin:.3rem 0 1rem; }
+  .policy-body p{ color:var(--muted); font-size:.95rem; line-height:1.75; margin-bottom:1rem; }
+  .policy-body ul{ padding-left:1.1rem; margin-bottom:0; }
+  .policy-body ul li{ color:var(--muted); font-size:.95rem; line-height:1.8; margin-bottom:.3rem; }
+  .policy-body ul li strong{ color:var(--ink); }
+
+  .service-mini-card{
+    background:var(--soft-bg); border-radius:10px; padding:1.3rem; height:100%;
+  }
+  .service-mini-card .mini-num{ color:var(--teal-dark); font-weight:700; font-size:.75rem; }
+  .service-mini-card h6{ font-weight:700; margin:.5rem 0 .4rem; }
+  .service-mini-card p{ color:var(--muted); font-size:.85rem; margin-bottom:0; }
+
+  .commitment-box{
+    background:var(--soft-bg); border-radius:10px; padding:1.2rem 1.4rem;
+    display:flex; gap:1rem; align-items:flex-start;
+  }
+  .commitment-box .check{
+    width:30px;height:30px;border-radius:50%;background:var(--teal);
+    color:#fff; display:flex;align-items:center;justify-content:center;
+    flex-shrink:0; font-size:.85rem;
+  }
+  .commitment-box strong{ display:block; margin-bottom:.2rem; }
+  .commitment-box p{ color:var(--muted); font-size:.88rem; margin:0; }
+
+  /* Help CTA (dark) */
+  .help-cta{
+    background:var(--black); border-radius:14px; padding:2.3rem 2.5rem;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;
+  }
+  .help-cta .eyebrow{ color:var(--teal); }
+  .help-cta h3{ color:#fff; font-weight:800; margin-bottom:.5rem; }
+  .help-cta p{ color:rgba(255,255,255,.65); font-size:.92rem; margin:0; max-width:460px; }
+  .btn-help{
+    background:var(--teal); color:#fff; font-weight:600; border-radius:8px;
+    padding:.7rem 1.4rem; display:inline-flex; align-items:center; gap:.5rem; white-space:nowrap;
+  }
+  .btn-help:hover{ background:var(--teal-dark); color:#fff; }
+
+  .ack-strip{ background:var(--soft-bg); padding:1.3rem 0; text-align:center; font-size:.88rem; color:var(--muted); }
+  .ack-strip strong{ color:var(--teal-dark); }
+
+  /* Footer */
+  .site-footer{ background:#fff; padding-top:2.5rem; border-top:1px solid var(--line); }
+  .footer-logo{ height:52px; }
+  .help-title{
+    color:var(--teal-dark); font-weight:700; font-size:.85rem; letter-spacing:.06em;
+    text-transform:uppercase; border-bottom:2px solid var(--teal); display:inline-block;
+    padding-bottom:.4rem; margin-bottom:1rem;
+  }
+  .site-footer a{ color:var(--ink); font-size:.92rem; }
+  .site-footer a:hover{ color:var(--teal-dark); }
+  .footer-address{ color:var(--muted); font-size:.9rem; line-height:1.7; }
+  .footer-bottom{ border-top:1px solid var(--line); margin-top:2rem; padding:1.2rem 0; font-size:.85rem; color:var(--muted); }
+    .sticky-header-wrap{
+    background: #fff;
+  }
+  .sticky-header-wrap.is-sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    animation: stickySlideDown .3s ease;
+  }
+  @keyframes stickySlideDown{
+    from{ transform: translateY(-100%); }
+    to{ transform: translateY(0); }
+  }
+  .sticky-spacer{
+    display: none;
+    height: 0;
+  }
+  .sticky-spacer.is-active{
+    display: block;
+  }
+</style>
+<link rel="stylesheet" href="assets/site-search.css?v=5">
+<script src="assets/site-search.js?v=4" defer></script>
+<link rel="stylesheet" href="assets/site-auth.css?v=1">
+<script src="assets/site-auth.js?v=3" defer></script>
+<link href="assets/site-footer-pay.css?v=4" rel="stylesheet">
+<link href="assets/site-header-frame.css?v=11" rel="stylesheet">
+<link href="assets/site-back-top.css?v=1" rel="stylesheet">
+<link rel="stylesheet" href="assets/site-mobile-nav.css?v=2">
+<script src="assets/site-mobile-nav.js?v=1" defer></script>
+</head>
+<body>
+
+<div class="site-header-frame">
+<div class="top-strip">PRINTUZ LTD</div>
+
+<div class="sticky-header-wrap">
+<header class="site-header">
+  <div class="container d-flex align-items-center flex-wrap gap-3">
+    <a href="index.html" class="site-brand" aria-label="Printuz Fulfillment">
+      <img src="assets/logo-official.png?v=1" alt="" class="site-brand-logo" width="240" height="52">
+    </a>
+    <form class="header-search ms-md-4" role="search">
+      <input class="form-control" type="search" placeholder="Search...">
+      <button class="btn" type="submit" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <line x1="16.65" y1="16.65" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+    <a href="#login" class="login-link ms-auto">LOGIN</a>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <a href="shop.html#/category/pod-products">Catalog</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html" class="active">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+    <a href="news.html">News</a>
+    <a href="#app">App Login</a>
+    <a href="extension.html">Extension</a>
+    <a href="recruit.html">Tuyển Dụng</a>
+  </div>
+</nav>
+</div>
+</div>
+<div class="sticky-spacer" id="stickySpacer"></div>
+
+<!-- Hero -->
+<section class="policy-hero" id="top">
+  <div class="container">
+    <div class="eyebrow mb-2">PRINTUZ LTD</div>
+    <h1>Privacy <span class="accent">Policy</span></h1>
+    <p>Your privacy matters to us. This Privacy Policy explains how Printuz LTD collects, uses, stores, and protects information when you use our services.</p>
+    <div class="effective-pill">Effective Date: <strong>August 12, 2026</strong></div>
+  </div>
+</section>
+
+<div class="container p-0"><hr class="m-0" style="border-color:var(--line);"></div>
+
+<!-- 01 Introduction -->
+<section class="policy-section">
+  <div class="container">
+    <div class="policy-num">01</div>
+      <div class="eyebrow mb-2">Introduction</div>
+      <div class="policy-body">
+        <h2>Privacy &amp; Data Protection</h2>
+        <p>At <strong>Printuz LTD</strong>, we respect the privacy and security of our customers, sellers, and users. This Privacy Policy describes how we handle information collected through our website, applications, and related services.</p>
+        <p class="mb-0">Our services include e-commerce fulfillment, Print-on-Demand (POD), dropshipping support, product management, and related tools designed to help online sellers manage their businesses.</p>
+      </div>
+  </div>
+</section>
+
+<!-- 02 Information We Collect -->
+<section class="policy-section">
+  <div class="container">
+    <div class="policy-num">02</div>
+      <div class="eyebrow mb-2">Information</div>
+      <div class="policy-body">
+        <h2>Information We Collect</h2>
+        <p>We may collect information that is necessary to provide and improve our services. Depending on how you use Printuz, this may include:</p>
+        <ul>
+          <li><strong>Account information</strong> such as your name, email address, contact information, and account details.</li>
+          <li><strong>Order information</strong> including product details, order information, shipping information, and fulfillment-related data.</li>
+          <li><strong>Product information</strong> such as product designs, descriptions, images, and other information submitted for fulfillment.</li>
+          <li><strong>Communication information</strong> when you contact us for support or other business inquiries.</li>
+          <li><strong>Technical information</strong> that may be collected when you access our website, applications, or related services.</li>
+        </ul>
+      </div>
+  </div>
+</section>
+
+<!-- 03 How We Use Your Information -->
+<section class="policy-section">
+  <div class="container">
+    <div class="policy-num">03</div>
+      <div class="eyebrow mb-2">Use of Information</div>
+      <div class="policy-body">
+        <h2>How We Use Your Information</h2>
+        <p>Information collected through our services may be used for legitimate business and operational purposes, including:</p>
+        <ul>
+          <li>Providing and managing fulfillment services.</li>
+          <li>Processing and managing orders.</li>
+          <li>Managing products and seller accounts.</li>
+          <li>Providing customer and technical support.</li>
+          <li>Improving our website, applications, products, and services.</li>
+          <li>Communicating with users regarding their accounts, orders, services, or inquiries.</li>
+          <li>Detecting, preventing, and addressing security or operational issues.</li>
+          <li>Complying with applicable legal and regulatory requirements.</li>
+        </ul>
+      </div>
+  </div>
+</section>
+
+<!-- 04 Websites, Apps & Extensions -->
+<section class="policy-section">
+  <div class="container">
+    <div class="policy-num">04</div>
+      <div class="eyebrow mb-2">Our Services</div>
+      <div class="policy-body">
+        <h2>Websites, Apps &amp; Extensions</h2>
+        <p>Printuz may provide services through multiple digital platforms, including:</p>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="service-mini-card">
+              <div class="mini-num">01</div>
+              <h6>Printuz Website</h6>
+              <p>Our primary website and online services available through Printuz.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-mini-card">
+              <div class="mini-num">02</div>
+              <h6>Printuz Web App</h6>
+              <p>Our web-based tools may be used by sellers to manage products, orders, and fulfillment.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-mini-card">
+              <div class="mini-num">03</div>
+              <h6>Chrome Extension</h6>
+              <p>Our browser extension may support sellers with product and fulfillment workflows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- 05 Data Storage & Security -->
+<section class="policy-section">
+  <div class="container">
+    <div class="policy-num">05</div>
+      <div class="eyebrow mb-2">Security</div>
+      <div class="policy-body">
+        <h2>Data Storage &amp; Security</h2>
+        <p>We take reasonable measures to protect information handled through our services against unauthorized access, alteration, disclosure, or destruction.</p>
+        <p>Access to information is limited to authorized personnel, service providers, or systems that require access to perform specific business or operational functions.</p>
+        <div class="commitment-box mt-3">
+          <div class="check">✓</div>
+          <div>
+            <strong>Our commitment</strong>
+            <p>We work to maintain appropriate technical and organizational safeguards for the information processed through our services.</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- 06 Sharing & Disclosure -->
+<section class="policy-section">
+  <div class="container">
+    <div class="policy-num">06</div>
+      <div class="eyebrow mb-2">Third Parties</div>
+      <div class="policy-body">
+        <h2>Sharing &amp; Disclosure</h2>
+        <p>Printuz does not sell or rent personal information for third-party marketing purposes.</p>
+        <p>Information may be shared with trusted service providers or business partners when reasonably necessary to provide our services, process orders, fulfill products, operate our systems, or comply with legal obligations.</p>
+        <p class="mb-0">Where third-party service providers process information on our behalf, they are expected to use the information only for the services they provide to us and to maintain appropriate confidentiality and security measures.</p>
+      </div>
+  </div>
+</section>
+
+<!-- 07 How Long We Keep Information -->
+<section class="policy-section">
+  <div class="container">
+    <div class="policy-num">07</div>
+      <div class="eyebrow mb-2">Data Retention</div>
+      <div class="policy-body">
+        <h2>How Long We Keep Information</h2>
+        <p>We retain information for as long as reasonably necessary to provide our services, maintain business and transaction records, resolve disputes, enforce agreements, and comply with applicable legal obligations.</p>
+        <p class="mb-0">The specific retention period may vary depending on the type of information and the purpose for which it was collected.</p>
+      </div>
+  </div>
+</section>
+
+<!-- 08 Your Privacy Rights -->
+<section class="policy-section">
+  <div class="container">
+    <div class="policy-num">08</div>
+      <div class="eyebrow mb-2">User Rights</div>
+      <div class="policy-body">
+        <h2>Your Privacy Rights</h2>
+        <p>Depending on applicable law, you may have rights regarding your personal information, including the ability to:</p>
+        <ul>
+          <li>Request access to personal information we hold about you.</li>
+          <li>Request correction of inaccurate or incomplete information.</li>
+          <li>Request deletion of certain personal information, where applicable.</li>
+          <li>Ask questions about how your information is processed.</li>
+        </ul>
+        <p class="mb-0 mt-3">To make a privacy-related request, please contact us using the information provided at the end of this Privacy Policy.</p>
+      </div>
+  </div>
+</section>
+
+<!-- 09 Cookies & Technical Information -->
+<section class="policy-section">
+  <div class="container">
+    <div class="policy-num">09</div>
+      <div class="eyebrow mb-2">Cookies &amp; Technologies</div>
+      <div class="policy-body">
+        <h2>Cookies &amp; Technical Information</h2>
+        <p>Our website and digital services may use cookies, analytics tools, or similar technologies to help operate the website, maintain functionality, understand usage, improve performance, and support security.</p>
+        <p class="mb-0">Depending on your browser or device settings, you may be able to control or restrict certain cookies. Disabling certain technologies may affect some website functionality.</p>
+      </div>
+  </div>
+</section>
+
+<!-- 10 Children's Privacy -->
+<section class="policy-section">
+  <div class="container">
+    <div class="policy-num">10</div>
+      <div class="eyebrow mb-2">Children</div>
+      <div class="policy-body">
+        <h2>Children's Privacy</h2>
+        <p>Our services are intended for businesses, e-commerce sellers, and other users who are able to use the services under applicable law.</p>
+        <p class="mb-0">We do not knowingly collect personal information from children where such collection is prohibited by applicable law.</p>
+      </div>
+  </div>
+</section>
+
+<!-- 11 Changes to This Privacy Policy -->
+<section class="policy-section" style="border-bottom:none;">
+  <div class="container">
+    <div class="policy-num">11</div>
+      <div class="eyebrow mb-2">Policy Updates</div>
+      <div class="policy-body">
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes to our services, business practices, technology, or applicable legal requirements.</p>
+        <p class="mb-0">When changes are made, we may update the effective date displayed at the beginning of this policy. We encourage users to review this page periodically for the latest information.</p>
+      </div>
+  </div>
+</section>
+
+<!-- Help CTA -->
+<section class="container py-4">
+  <div class="help-cta">
+    <div>
+      <div class="eyebrow mb-2">Privacy Questions?</div>
+      <h3>We're here to help.</h3>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy or the handling of your information, please contact Printuz LTD.</p>
+    </div>
+    <a href="mailto:Contact@Printuz.com" class="btn-help">Contact@Printuz.com →</a>
+  </div>
+</section>
+
+<!-- Acknowledgement strip -->
+<div class="ack-strip">
+  By using Printuz services, you acknowledge that you have read and understood this Policy. <strong>Printuz LTD</strong>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer pb-4">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-7">
+        <a href="index.html" class="site-brand site-brand--footer mb-3" aria-label="Printuz Fulfillment">
+          <img src="assets/logo-official.png?v=1" alt="" class="site-brand-logo" width="320" height="88">
+        </a>
+        <div class="fw-bold mb-1">Printuz LTD</div>
+        <div class="text-muted mb-2" style="font-size:.9rem;">Fulfillment &amp; E-Commerce Solutions</div>
+        <div class="fw-bold mb-1" style="font-size:.85rem; letter-spacing:.06em;">ADDRESS</div>
+        <p class="footer-address mb-2">
+          73, 4C Street, Dai Phuc Residential Area,<br>
+          Binh Hung Commune, Binh Chanh District,<br>
+          Ho Chi Minh City, Vietnam
+        </p>
+        <a href="mailto:Contact@Printuz.com">Contact@Printuz.com</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="help-title">Help Center</div>
+        <ul class="list-unstyled">
+          <li class="mb-2 pb-2 border-bottom"><a href="about.html">About</a></li>
+          <li class="mb-2 pb-2 border-bottom"><a href="news.html">Blog</a></li>
+          <li class="mb-2 pb-2 border-bottom"><a href="contact.html">Contact</a></li>
+          <li class="mb-2 pb-2"><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <div>Copyright 2026 © <strong>Printuz ltd</strong></div>
+            <div class="footer-pay-badges">
+        <span class="pay-badge pay-visa">VISA</span>
+        <span class="pay-badge pay-paypal"><span class="pp-pay">Pay</span><span class="pp-pal">Pal</span></span>
+        <span class="pay-badge pay-stripe">stripe</span>
+        <span class="pay-badge pay-mastercard"><span class="mc-circles"><span class="mc-c1"></span><span class="mc-c2"></span></span><span class="mc-text">MasterCard</span></span>
+        <span class="pay-badge pay-cod">CASH ON<br>DELIVERY</span>
+      </div>
+</div>
+  </div>
+</footer>
+
+<a href="#top" class="back-top" id="backTop" aria-label="Back to top">↑</a>
+<script src="assets/site-back-top.js?v=1" defer></script>
+
+<script>
+(function(){
+  var wrap = document.querySelector('.sticky-header-wrap');
+  var spacer = document.getElementById('stickySpacer');
+  if(!wrap || !spacer) return;
+  var threshold = 220; // px scrolled before the sticky nav pops back in
+  var ticking = false;
+
+  function onScroll(){
+    var current = window.scrollY || window.pageYOffset;
+    if(current > threshold){
+      if(!wrap.classList.contains('is-sticky')){
+        spacer.style.height = wrap.offsetHeight + 'px';
+        wrap.classList.add('is-sticky');
+        spacer.classList.add('is-active');
+      }
+    } else {
+      wrap.classList.remove('is-sticky');
+      spacer.classList.remove('is-active');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

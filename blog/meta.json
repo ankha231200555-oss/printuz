@@ -1,0 +1,247 @@
+{
+  "source": "https://printuz.com/blog/",
+  "syncedAt": "2026-09-15T06:15:36.216724Z",
+  "totalPosts": 1092,
+  "postsPerPage": 10,
+  "totalPages": 110,
+  "categories": [
+    {
+      "id": 379,
+      "slug": "bez-rubriki",
+      "label": "! Без рубрики",
+      "count": 6
+    },
+    {
+      "id": 382,
+      "slug": "1-2",
+      "label": "1",
+      "count": 6
+    },
+    {
+      "id": 381,
+      "slug": "a16z-generative-ai-2",
+      "label": "a16z generative ai",
+      "count": 1
+    },
+    {
+      "id": 338,
+      "slug": "ai",
+      "label": "AI",
+      "count": 2
+    },
+    {
+      "id": 292,
+      "slug": "amazon",
+      "label": "Amazon",
+      "count": 5
+    },
+    {
+      "id": 384,
+      "slug": "casino",
+      "label": "Casino",
+      "count": 34
+    },
+    {
+      "id": 380,
+      "slug": "data-protection-news",
+      "label": "Data Protection News",
+      "count": 1
+    },
+    {
+      "id": 335,
+      "slug": "designer-guide",
+      "label": "Designer Guide",
+      "count": 6
+    },
+    {
+      "id": 290,
+      "slug": "ebay",
+      "label": "Ebay",
+      "count": 14
+    },
+    {
+      "id": 291,
+      "slug": "etsy",
+      "label": "Etsy",
+      "count": 23
+    },
+    {
+      "id": 303,
+      "slug": "knowledge",
+      "label": "Knowledge",
+      "count": 17
+    },
+    {
+      "id": 386,
+      "slug": "lina-steiner",
+      "label": "Lina Steiner",
+      "count": 1
+    },
+    {
+      "id": 17,
+      "slug": "news",
+      "label": "News",
+      "count": 19
+    },
+    {
+      "id": 374,
+      "slug": "online-gambling",
+      "label": "Online gambling",
+      "count": 0
+    },
+    {
+      "id": 385,
+      "slug": "post",
+      "label": "Post",
+      "count": 47
+    },
+    {
+      "id": 287,
+      "slug": "printuz-guide",
+      "label": "Printuz Guide",
+      "count": 11
+    },
+    {
+      "id": 340,
+      "slug": "printuzs-service",
+      "label": "Printuz's Service",
+      "count": 3
+    },
+    {
+      "id": 352,
+      "slug": "product-research",
+      "label": "Product Research",
+      "count": 1
+    },
+    {
+      "id": 383,
+      "slug": "public",
+      "label": "public",
+      "count": 37
+    },
+    {
+      "id": 288,
+      "slug": "resources",
+      "label": "Resources",
+      "count": 3
+    },
+    {
+      "id": 388,
+      "slug": "security-news",
+      "label": "Security News",
+      "count": 1
+    },
+    {
+      "id": 289,
+      "slug": "seller-guide",
+      "label": "Seller Guide",
+      "count": 57
+    },
+    {
+      "id": 339,
+      "slug": "shared",
+      "label": "Shared",
+      "count": 3
+    },
+    {
+      "id": 387,
+      "slug": "spiele",
+      "label": "Spiele",
+      "count": 4
+    },
+    {
+      "id": 372,
+      "slug": "style-trends",
+      "label": "Style & Trends",
+      "count": 2
+    },
+    {
+      "id": 293,
+      "slug": "tiktokshop",
+      "label": "TiktokShop",
+      "count": 5
+    },
+    {
+      "id": 371,
+      "slug": "tool",
+      "label": "Tool",
+      "count": 2
+    },
+    {
+      "id": 1,
+      "slug": "uncategorized",
+      "label": "Uncategorized",
+      "count": 870
+    },
+    {
+      "id": 331,
+      "slug": "woocomerce",
+      "label": "Woocomerce",
+      "count": 1
+    }
+  ],
+  "tagCloud": [
+    {
+      "slug": "fee",
+      "label": "Fee",
+      "count": 2
+    },
+    {
+      "slug": "amazon",
+      "label": "Amazon",
+      "count": 1
+    },
+    {
+      "slug": "halloween",
+      "label": "Halloween",
+      "count": 1
+    },
+    {
+      "slug": "payment",
+      "label": "Payment",
+      "count": 1
+    },
+    {
+      "slug": "printeres",
+      "label": "Printeres",
+      "count": 1
+    },
+    {
+      "slug": "reseach",
+      "label": "reseach",
+      "count": 1
+    },
+    {
+      "slug": "shipping",
+      "label": "Shipping",
+      "count": 1
+    },
+    {
+      "slug": "trending",
+      "label": "trending",
+      "count": 1
+    }
+  ],
+  "authors": {
+    "admin_0y1c4zwf": {
+      "name": "admin",
+      "bio": ""
+    },
+    "thaiminh": {
+      "name": "thaiminh",
+      "bio": ""
+    },
+    "tien": {
+      "name": "Tien",
+      "bio": ""
+    },
+    "uyenbui": {
+      "name": "Uyên Bùi",
+      "bio": ""
+    },
+    "whiskyle": {
+      "name": "Whiskyle",
+      "bio": ""
+    }
+  }
+}

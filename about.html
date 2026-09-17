@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About – Printuz LTD</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#4FA6A6;
+    --teal-dark:#3D8C8C;
+    --ink:#20242B;
+    --muted:#6B7280;
+    --line:#E7E9EC;
+    --soft-bg:#EAF3F3;
+    --black:#111417;
+  }
+  body{ font-family:'Inter', sans-serif; color:var(--ink); }
+  h1,h2,h3,.brand-word{ font-family:'Poppins', sans-serif; }
+  a{ text-decoration:none; }
+  .eyebrow{
+    color:var(--teal-dark);
+    font-weight:700;
+    font-size:.78rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .eyebrow.on-dark{ color:var(--teal); }
+  .section-lead{ color:var(--muted); font-size:.98rem; line-height:1.7; }
+  .accent{ color:var(--teal); }
+
+  /* Top strip + header + nav (same as homepage) */
+  .top-strip{
+    background:var(--teal); color:#fff; font-size:.78rem; letter-spacing:.06em;
+    text-align:center; padding:.4rem 0; font-weight:600;
+  }
+  .site-header{ background:#fff; padding:1rem 0; }
+  .logo-img{ height:48px; }
+  .header-search{ max-width:300px; width:100%; }
+  .header-search .form-control{ border-radius:999px 0 0 999px; border-color:var(--line); border-right:none; }
+  .header-search .btn{ border-radius:0 999px 999px 0; background:#fff; border:1px solid var(--line); border-left:none; color:var(--muted); }
+  .login-link{ color:var(--ink); font-weight:600; letter-spacing:.04em; font-size:.85rem; }
+  .login-link:hover{ color:var(--teal-dark); }
+  .main-nav{ background:var(--teal); }
+  .main-nav a{ color:#fff; font-weight:600; font-size:.9rem; padding:.8rem .9rem; display:inline-block; }
+  .main-nav a:hover{ background:rgba(255,255,255,.12); }
+  .main-nav a.active{ background:rgba(255,255,255,.18); }
+
+  /* Hero */
+  .about-hero{ background:var(--soft-bg); padding:4rem 0; }
+  .about-hero h1{
+    font-weight:800; font-size:clamp(2rem, 4vw, 2.7rem); line-height:1.2; color:var(--ink);
+  }
+  .hero-visual{ position:relative; min-height:320px; }
+  .ring{
+    position:absolute; border:1px solid rgba(79,166,166,.25); border-radius:50%;
+    top:50%; left:50%; transform:translate(-50%,-50%);
+  }
+  .ring.r1{ width:340px; height:340px; }
+  .ring.r2{ width:260px; height:260px; }
+  .global-card{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    background:#fff; border-radius:16px; box-shadow:0 12px 30px rgba(20,30,40,.12);
+    padding:1.6rem 1.8rem; text-align:center; width:230px;
+  }
+  .global-card .dot{
+    width:42px;height:42px;border-radius:50%;background:var(--soft-bg);
+    display:flex;align-items:center;justify-content:center;margin:0 auto .7rem;
+    color:var(--teal-dark); font-size:1.1rem;
+  }
+  .float-card{
+    position:absolute; background:#fff; border-radius:12px; box-shadow:0 10px 24px rgba(20,30,40,.1);
+    padding:.8rem 1.1rem;
+  }
+  .float-card.founded{ top:14%; right:6%; }
+  .float-card.pod{ bottom:16%; left:4%; }
+  .float-card .big{ font-weight:700; color:var(--teal-dark); font-size:1.05rem; }
+  .float-card small{ color:var(--muted); font-size:.72rem; }
+
+  .btn-teal{ background:var(--teal); border-color:var(--teal); color:#fff; font-weight:600; border-radius:8px; padding:.6rem 1.4rem; }
+  .btn-teal:hover{ background:var(--teal-dark); border-color:var(--teal-dark); color:#fff; }
+  .btn-outline-ink{ border:1px solid var(--line); color:var(--ink); font-weight:600; border-radius:8px; padding:.6rem 1.4rem; background:#fff; }
+  .btn-outline-ink:hover{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .btn-white{ background:#fff; color:var(--teal-dark); font-weight:700; border-radius:8px; padding:.65rem 1.5rem; border:none; }
+  .btn-white:hover{ background:#F1FBFB; }
+
+  /* Dark network section */
+  .network-section{ background:var(--black); color:#fff; padding:4.5rem 0; }
+  .network-section h2{ font-weight:800; font-size:clamp(1.7rem,3vw,2.3rem); }
+  .network-card{
+    background:#1B1F24; border:1px solid rgba(79,166,166,.35); border-radius:12px;
+    padding:1.6rem; height:100%; position:relative;
+    display:flex; flex-direction:column;
+    transition: transform .28s ease, box-shadow .28s ease;
+  }
+  .network-card:hover{
+    transform: translateY(-10px);
+    box-shadow:0 18px 40px rgba(0,0,0,.28);
+  }
+  .network-card--highlight{
+    background:var(--teal);
+    border-color:var(--teal);
+    box-shadow:0 18px 40px rgba(0,0,0,.28);
+  }
+  .network-card .num{
+    position:absolute; top:1.2rem; right:1.2rem; font-size:.72rem; color:rgba(255,255,255,.35);
+  }
+  .network-card--highlight .num{ color:rgba(255,255,255,.65); }
+  .network-card .code{ font-weight:800; font-size:1.3rem; color:var(--teal); }
+  .network-card--highlight .code{ color:#fff; }
+  .network-card h5{ font-weight:700; margin:.6rem 0 .5rem; }
+  .network-card p{ color:rgba(255,255,255,.65); font-size:.88rem; margin-bottom:0; flex:1; }
+  .network-card--highlight p{ color:rgba(255,255,255,.88); }
+  .tag-pill{
+    display:inline-block; align-self:flex-start; margin-top:1.25rem;
+    background:rgba(79,166,166,.12); border:1px solid rgba(79,166,166,.45); border-radius:999px;
+    padding:.35rem .85rem; font-size:.68rem; letter-spacing:.06em; font-weight:700; color:var(--teal);
+  }
+  .network-card--highlight .tag-pill{
+    background:rgba(255,255,255,.12);
+    border-color:rgba(255,255,255,.55);
+    color:#fff;
+  }
+
+  /* What we do */
+  .service-card{
+    border:1px solid var(--line); border-radius:14px; padding:1.7rem; height:100%; background:#fff;
+    transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+  }
+  .service-card:hover{
+    transform: translateY(-8px);
+    border:2px solid var(--teal);
+    box-shadow:0 12px 28px rgba(79,166,166,.18);
+  }
+  .service-card-top{
+    display:flex; align-items:flex-start; justify-content:space-between;
+    margin-bottom:1rem;
+  }
+  .service-icon{
+    width:44px;height:44px;border-radius:10px;background:var(--soft-bg);
+    display:flex;align-items:center;justify-content:center;color:var(--teal-dark);
+    flex-shrink:0;
+  }
+  .service-icon svg{ display:block; }
+  .service-num{ font-size:.72rem; color:#c5cbd3; font-weight:600; letter-spacing:.04em; }
+  .service-card ul{ list-style:none; padding:0; margin:1rem 0 0; }
+  .service-card ul li{
+    font-size:.85rem; color:var(--muted); margin-bottom:0;
+    padding:.55rem 0; border-top:1px solid var(--line);
+  }
+  .service-card ul li:first-child{ border-top:none; padding-top:0; }
+  .service-card ul li::before{ content:"\2713  "; color:var(--teal-dark); font-weight:700; }
+
+  /* Product categories */
+  .category-section{ background:var(--soft-bg); padding:4rem 0; }
+  .cat-pill{
+    background:#fff; border:1px solid var(--line); border-radius:8px;
+    padding:.7rem 1.1rem; font-size:.88rem; font-weight:500; display:inline-block;
+  }
+
+  /* Why printuz */
+  .why-col{ padding:0 1.2rem; }
+  .why-col .num{ color:var(--teal-dark); font-weight:700; font-size:.85rem; }
+  .why-col h5{ font-weight:700; margin:.6rem 0 .5rem; }
+  .why-col p{ color:var(--muted); font-size:.88rem; }
+
+  /* Mission (dark) */
+  .mission-section{ background:var(--black); color:#fff; padding:4rem 0; border-radius:18px; }
+  .mission-section h2{ font-weight:800; font-size:clamp(1.7rem,3vw,2.2rem); }
+  .mission-section p{ color:rgba(255,255,255,.7); max-width:640px; }
+  .mission-brand{ font-weight:700; letter-spacing:.03em; }
+  .mission-brand small{ display:block; color:var(--teal); font-size:.7rem; letter-spacing:.1em; }
+
+  /* CTA */
+  .cta-section{ background:var(--teal); color:#fff; padding:3.5rem; border-radius:18px; }
+  .cta-section h2{ font-weight:800; font-size:clamp(1.6rem,3vw,2.1rem); }
+  .cta-section p{ color:rgba(255,255,255,.85); max-width:560px; }
+
+  /* Contact info */
+  .contact-block h6{ color:var(--teal-dark); font-weight:700; font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom:.5rem; }
+  .contact-block p{ color:var(--muted); font-size:.92rem; margin-bottom:1.6rem; }
+  .contact-divider{ border-top:1px solid var(--line); margin:1rem 0; }
+
+  /* Team */
+  .team-avatar{
+    width:100%; padding-bottom:100%; border-radius:50%; background:#E4E9EF; position:relative;
+  }
+  .team-name{ font-weight:700; font-size:.92rem; margin-top:.9rem; }
+  .team-role{ color:var(--muted); font-size:.78rem; letter-spacing:.03em; text-transform:uppercase; }
+  .social-row{ margin-top:.6rem; }
+  .social-row a{
+    width:26px;height:26px;border-radius:50%;border:1px solid var(--line);
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:.72rem; color:var(--muted); margin-right:.35rem;
+  }
+  .social-row a:hover{ border-color:var(--teal); color:var(--teal-dark); }
+
+  /* Footer */
+  .site-footer{ background:#fff; padding-top:2.5rem; border-top:1px solid var(--line); }
+  .footer-logo{ height:52px; }
+  .help-title{
+    color:var(--teal-dark); font-weight:700; font-size:.85rem; letter-spacing:.06em;
+    text-transform:uppercase; border-bottom:2px solid var(--teal); display:inline-block;
+    padding-bottom:.4rem; margin-bottom:1rem;
+  }
+  .site-footer a{ color:var(--ink); font-size:.92rem; }
+  .site-footer a:hover{ color:var(--teal-dark); }
+  .footer-address{ color:var(--muted); font-size:.9rem; line-height:1.7; }
+  .footer-bottom{
+    border-top:1px solid var(--line); margin-top:2rem; padding:1.2rem 0;
+    font-size:.85rem; color:var(--muted);
+  }
+  section.pad{ padding:4rem 0; }
+
+  .sticky-header-wrap{
+    background: #fff;
+  }
+  .sticky-header-wrap.is-sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    animation: stickySlideDown .3s ease;
+  }
+  @keyframes stickySlideDown{
+    from{ transform: translateY(-100%); }
+    to{ transform: translateY(0); }
+  }
+  .sticky-spacer{
+    display: none;
+    height: 0;
+  }
+  .sticky-spacer.is-active{
+    display: block;
+  }
+</style>
+<link rel="stylesheet" href="assets/site-search.css?v=5">
+<script src="assets/site-search.js?v=4" defer></script>
+<link rel="stylesheet" href="assets/site-auth.css?v=1">
+<script src="assets/site-auth.js?v=3" defer></script>
+<link href="assets/site-footer-pay.css?v=4" rel="stylesheet">
+<link href="assets/site-header-frame.css?v=11" rel="stylesheet">
+<link href="assets/site-back-top.css?v=1" rel="stylesheet">
+<link rel="stylesheet" href="assets/site-mobile-nav.css?v=2">
+<script src="assets/site-mobile-nav.js?v=1" defer></script>
+</head>
+<body class="page-about">
+
+<div class="site-header-frame">
+<div class="top-strip">PRINTUZ LTD</div>
+
+<div class="sticky-header-wrap">
+<header class="site-header">
+  <div class="container d-flex align-items-center flex-wrap gap-3">
+    <a href="index.html" class="site-brand" aria-label="Printuz Fulfillment">
+      <img src="assets/logo-official.png?v=1" alt="" class="site-brand-logo" width="240" height="52">
+    </a>
+    <form class="header-search ms-md-4" role="search">
+      <input class="form-control" type="search" placeholder="Search...">
+      <button class="btn" type="submit" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <line x1="16.65" y1="16.65" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+    <a href="#login" class="login-link ms-auto">LOGIN</a>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <a href="shop.html#/category/pod-products">Catalog</a>
+    <a href="about.html" class="active">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+    <a href="news.html">News</a>
+    <a href="#app">App Login</a>
+    <a href="extension.html">Extension</a>
+    <a href="recruit.html">Tuyển Dụng</a>
+  </div>
+</nav>
+</div>
+</div>
+<div class="sticky-spacer" id="stickySpacer"></div>
+
+<!-- Hero -->
+<section class="about-hero" id="top">
+  <div class="container">
+    <div class="eyebrow mb-3">PRINTUZ FULFILLMENT</div>
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <h1 class="mb-3">Your Products.<br><span class="accent">Our Fulfillment<br>Network.</span></h1>
+        <p class="section-lead mb-4">Printuz LTD is a global fulfillment partner helping e-commerce sellers grow through Print-on-Demand, dropshipping, and reliable fulfillment solutions.</p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="#services" class="btn btn-teal">Explore Our Services</a>
+          <a href="contact.html" class="btn btn-outline-ink">Contact Us</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="global-card">
+            <div class="dot" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+            <div class="fw-bold">Global Fulfillment</div>
+            <div class="text-muted" style="font-size:.8rem;">Vietnam · China · USA</div>
+          </div>
+          <div class="float-card founded">
+            <div class="big">2022</div>
+            <small>Founded</small>
+          </div>
+          <div class="float-card pod">
+            <div class="big" style="font-size:.95rem;">POD</div>
+            <small>+ Dropshipping</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Printuz -->
+<section class="pad">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+      <div class="col-lg-6">
+        <div class="eyebrow mb-2">ABOUT PRINTUZ</div>
+        <h2 class="fw-bold" style="font-size:clamp(1.6rem,3vw,2.1rem);">Making e-commerce fulfillment <span class="accent">simple &amp; scalable.</span></h2>
+      </div>
+      <div class="col-lg-6">
+        <p class="section-lead">Founded in <strong>2022</strong>, Printuz LTD is a fulfillment and e-commerce solutions company based in Ho Chi Minh City, Vietnam.</p>
+        <p class="section-lead">We connect online sellers, brands, and e-commerce businesses with trusted production and fulfillment partners across Vietnam, China, and the United States.</p>
+        <p class="section-lead mb-0">Our mission is to make it easier for businesses to create, customize, fulfill, and deliver products to customers around the world — without the complexity of traditional inventory management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global network (dark) -->
+<section class="network-section">
+  <div class="container">
+    <div class="eyebrow on-dark mb-2">OUR GLOBAL NETWORK</div>
+    <h2 class="mb-3">Connected to production<br><span class="accent">where you need it.</span></h2>
+    <p class="section-lead mb-5" style="color:rgba(255,255,255,.65); max-width:600px;">Our network of production and fulfillment partners allows us to provide flexible sourcing and shipping solutions for different markets and business models.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="network-card">
+          <div class="num">01</div>
+          <div class="code">VN</div>
+          <h5>Vietnam</h5>
+          <p>Production and fulfillment solutions with access to local manufacturing resources.</p>
+          <span class="tag-pill">PRODUCTION HUB</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="network-card network-card--highlight">
+          <div class="num">02</div>
+          <div class="code">CN</div>
+          <h5>China</h5>
+          <p>Broad product sourcing capabilities and competitive manufacturing options.</p>
+          <span class="tag-pill">GLOBAL SOURCING</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="network-card">
+          <div class="num">03</div>
+          <div class="code">US</div>
+          <h5>United States</h5>
+          <p>Fulfillment options designed to help sellers serve customers in the US market.</p>
+          <span class="tag-pill">US FULFILLMENT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What we do -->
+<section class="pad" id="services">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="eyebrow mb-2">WHAT WE DO</div>
+      <h2 class="fw-bold mb-3" style="font-size:clamp(1.6rem,3vw,2.1rem);">Everything you need to <span class="accent">fulfill your orders.</span></h2>
+      <p class="section-lead mx-auto" style="max-width:560px;">From product creation to fulfillment, we help simplify the operational side of your e-commerce business.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.1 3.9L17 8l-3.9 1.1L12 13l-1.1-3.9L7 8l3.9-.9L12 3z"/></svg></div>
+            <span class="service-num">01</span>
+          </div>
+          <h6 class="fw-bold">Print-on-Demand</h6>
+          <p class="text-muted mb-0" style="font-size:.88rem;">Create and sell customized products without holding large amounts of inventory.</p>
+          <ul>
+            <li>Custom products</li>
+            <li>Made-to-order fulfillment</li>
+            <li>Flexible product catalog</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></div>
+            <span class="service-num">02</span>
+          </div>
+          <h6 class="fw-bold">Dropshipping</h6>
+          <p class="text-muted mb-0" style="font-size:.88rem;">Source products and have orders fulfilled directly to your customers.</p>
+          <ul>
+            <li>No inventory management</li>
+            <li>Direct-to-customer shipping</li>
+            <li>Scalable operations</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <span class="service-num">03</span>
+          </div>
+          <h6 class="fw-bold">Order Fulfillment</h6>
+          <p class="text-muted mb-0" style="font-size:.88rem;">Reliable fulfillment support designed to help your business process and ship orders efficiently.</p>
+          <ul>
+            <li>Order processing</li>
+            <li>Production coordination</li>
+            <li>Shipping support</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+            <span class="service-num">04</span>
+          </div>
+          <h6 class="fw-bold">Custom Solutions</h6>
+          <p class="text-muted mb-0" style="font-size:.88rem;">Flexible solutions for sellers and brands with specific product or fulfillment requirements.</p>
+          <ul>
+            <li>Custom sourcing</li>
+            <li>Product customization</li>
+            <li>Business-specific solutions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product categories -->
+<section class="category-section">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+      <div class="col-lg-5">
+        <div class="eyebrow mb-2">PRODUCT CATEGORIES</div>
+        <h2 class="fw-bold mb-3" style="font-size:clamp(1.6rem,3vw,2.1rem);">From one product<br><span class="accent">to an entire catalog.</span></h2>
+        <p class="section-lead mb-0">Our fulfillment network supports a broad range of products, giving sellers more freedom to build and expand their stores.</p>
+      </div>
+      <div class="col-lg-7">
+        <div class="d-flex flex-wrap gap-2">
+          <span class="cat-pill">Apparel &amp; Fashion</span>
+          <span class="cat-pill">Bags &amp; Accessories</span>
+          <span class="cat-pill">Footwear</span>
+          <span class="cat-pill">Home &amp; Living</span>
+          <span class="cat-pill">Drinkware</span>
+          <span class="cat-pill">Phone Accessories</span>
+          <span class="cat-pill">Jewelry</span>
+          <span class="cat-pill">Sports Products</span>
+          <span class="cat-pill">Personalized Gifts</span>
+          <span class="cat-pill">Seasonal Products</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Printuz -->
+<section class="pad">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="font-size:clamp(1.6rem,3vw,2.1rem);">Built for modern <span class="accent">e-commerce sellers.</span></h2>
+    </div>
+    <div class="row">
+      <div class="col-md-3 why-col border-end">
+        <div class="num">01</div>
+        <h5>Global Network</h5>
+        <p>Access production and fulfillment resources across multiple countries.</p>
+      </div>
+      <div class="col-md-3 why-col border-end">
+        <div class="num">02</div>
+        <h5>Flexible Solutions</h5>
+        <p>Choose solutions that fit your products, customers, and business model.</p>
+      </div>
+      <div class="col-md-3 why-col border-end">
+        <div class="num">03</div>
+        <h5>Lower Inventory Risk</h5>
+        <p>POD and dropshipping models allow you to grow without holding large amounts of stock.</p>
+      </div>
+      <div class="col-md-3 why-col">
+        <div class="num">04</div>
+        <h5>Built to Scale</h5>
+        <p>Expand your product catalog and markets as your e-commerce business grows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our mission (dark) -->
+<section class="container pb-5">
+  <div class="mission-section">
+    <div class="container">
+      <div class="eyebrow on-dark mb-2">OUR MISSION</div>
+      <h2 class="mb-3">Connecting e-commerce with <span class="accent">global fulfillment.</span></h2>
+      <p class="mb-4">We believe fulfillment should be a growth engine, not a bottleneck. Printuz combines production partners, fulfillment capabilities, and e-commerce experience to help businesses turn ideas into products and deliver them to customers around the world.</p>
+      <div class="mission-brand">
+        PRINTUZ
+        <small>FULFILLMENT</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="container pb-5" id="cta-work-together">
+  <div class="cta-section">
+    <div class="eyebrow on-dark mb-2" style="color:rgba(255,255,255,.8);">LET'S WORK TOGETHER</div>
+    <h2 class="mb-3">Ready to grow your e-commerce business?</h2>
+    <p class="mb-4">Whether you're looking for Print-on-Demand, dropshipping, product sourcing, or fulfillment support, Printuz is ready to help.</p>
+    <a href="#contact-info" class="btn btn-white">Contact Printuz</a>
+  </div>
+</section>
+
+<!-- Contact info -->
+<section class="pad pt-0" id="contact-info">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-6">
+        <div class="eyebrow mb-2">PRINTUZ LTD</div>
+        <h2 class="fw-bold mb-2" style="font-size:clamp(1.6rem,3vw,2.1rem);">Let's build something<br><span class="accent">great together.</span></h2>
+        <p class="text-muted mb-0">Your products. Your brand. Our fulfillment network.</p>
+      </div>
+      <div class="col-lg-6">
+        <div class="contact-block">
+          <h6>ADDRESS</h6>
+          <p>73, 4C Street, Dai Phuc Residential Area,<br>Binh Hung Commune, Binh Chanh District,<br>Ho Chi Minh City, Vietnam</p>
+          <div class="contact-divider"></div>
+          <h6>EMAIL</h6>
+          <p><a href="mailto:Contact@Printuz.com">Contact@Printuz.com</a></p>
+          <div class="contact-divider"></div>
+          <h6>ESTABLISHED</h6>
+          <p class="mb-0">2022</p>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between flex-wrap gap-2 pt-4 mt-2 border-top" style="font-size:.8rem; color:var(--muted);">
+      <div>© 2026 Printuz LTD. All Rights Reserved.</div>
+      <div>Print-on-Demand · Dropshipping · Fulfillment</div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="pad pt-0">
+  <div class="container">
+    <div class="row g-4 mb-3">
+      <div class="col-6 col-md-3 text-center">
+        <div class="team-avatar"></div>
+        <div class="team-name">WHISKY LE</div>
+        <div class="team-role">CEO / Founder</div>
+        <div class="social-row">
+          <a href="#">f</a><a href="#">t</a><a href="#">@</a><a href="#">?</a><a href="#">?</a>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <div class="team-avatar"></div>
+        <div class="team-name">MANH NAM</div>
+        <div class="team-role">Technical Director</div>
+        <div class="social-row">
+          <a href="#">f</a><a href="#">t</a><a href="#">@</a><a href="#">?</a><a href="#">?</a>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <div class="team-avatar"></div>
+        <div class="team-name">NGUYEN VAN HUNG</div>
+        <div class="team-role">Developer</div>
+        <div class="social-row">
+          <a href="#">f</a><a href="#">t</a><a href="#">@</a><a href="#">?</a><a href="#">?</a>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <div class="team-avatar"></div>
+        <div class="team-name">TRAN HOANG THAN</div>
+        <div class="team-role">Finance Director</div>
+        <div class="social-row">
+          <a href="#">f</a><a href="#">t</a><a href="#">@</a><a href="#">?</a><a href="#">?</a>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-3 text-center">
+        <div class="team-avatar"></div>
+        <div class="team-name">TRACY TRANG</div>
+        <div class="team-role">Office Manager</div>
+        <div class="social-row">
+          <a href="#">f</a><a href="#">t</a><a href="#">@</a><a href="#">?</a><a href="#">?</a>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <div class="team-avatar"></div>
+        <div class="team-name">NHAN PHAM</div>
+        <div class="team-role">Account Management</div>
+        <div class="social-row">
+          <a href="#">f</a><a href="#">t</a><a href="#">@</a><a href="#">?</a><a href="#">?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer pb-4">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-7">
+        <a href="index.html" class="site-brand site-brand--footer mb-3" aria-label="Printuz Fulfillment">
+          <img src="assets/logo-official.png?v=1" alt="" class="site-brand-logo" width="320" height="88">
+        </a>
+        <div class="fw-bold mb-1">Printuz LTD</div>
+        <div class="text-muted mb-2" style="font-size:.9rem;">Fulfillment &amp; E-Commerce Solutions</div>
+        <div class="fw-bold mb-1" style="font-size:.85rem; letter-spacing:.06em;">ADDRESS</div>
+        <p class="footer-address mb-2">
+          73, 4C Street, Dai Phuc Residential Area,<br>
+          Binh Hung Commune, Binh Chanh District,<br>
+          Ho Chi Minh City, Vietnam
+        </p>
+        <a href="mailto:Contact@Printuz.com">Contact@Printuz.com</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="help-title">Help Center</div>
+        <ul class="list-unstyled">
+          <li class="mb-2 pb-2 border-bottom"><a href="about.html">About</a></li>
+          <li class="mb-2 pb-2 border-bottom"><a href="news.html">Blog</a></li>
+          <li class="mb-2 pb-2 border-bottom"><a href="contact.html">Contact</a></li>
+          <li class="mb-2 pb-2"><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <div>Copyright 2026 © <strong>Printuz ltd</strong></div>
+            <div class="footer-pay-badges">
+        <span class="pay-badge pay-visa">VISA</span>
+        <span class="pay-badge pay-paypal"><span class="pp-pay">Pay</span><span class="pp-pal">Pal</span></span>
+        <span class="pay-badge pay-stripe">stripe</span>
+        <span class="pay-badge pay-mastercard"><span class="mc-circles"><span class="mc-c1"></span><span class="mc-c2"></span></span><span class="mc-text">MasterCard</span></span>
+        <span class="pay-badge pay-cod">CASH ON<br>DELIVERY</span>
+      </div>
+</div>
+  </div>
+</footer>
+
+<a href="#top" class="back-top" id="backTop" aria-label="Back to top">↑</a>
+<script src="assets/site-back-top.js?v=1" defer></script>
+
+<script>
+(function(){
+  var wrap = document.querySelector('.sticky-header-wrap');
+  var spacer = document.getElementById('stickySpacer');
+  if(!wrap || !spacer) return;
+  var threshold = 220; // px scrolled before the sticky nav pops back in
+  var ticking = false;
+
+  function onScroll(){
+    var current = window.scrollY || window.pageYOffset;
+    if(current > threshold){
+      if(!wrap.classList.contains('is-sticky')){
+        spacer.style.height = wrap.offsetHeight + 'px';
+        wrap.classList.add('is-sticky');
+        spacer.classList.add('is-active');
+      }
+    } else {
+      wrap.classList.remove('is-sticky');
+      spacer.classList.remove('is-active');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

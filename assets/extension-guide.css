@@ -1,0 +1,63 @@
+/* Extension page — WordPress-style guide (figures stacked, no step cards) */
+.ext-wp-body .ext-wp-h2,
+.ext-wp-body h2.wp-block-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  margin: 2rem 0 1rem;
+  color: #2a2f36;
+  border: none;
+  padding: 0;
+}
+
+.ext-wp-body .ext-wp-h2:first-child,
+.ext-wp-body h2.wp-block-heading:first-child {
+  margin-top: 0;
+}
+
+.ext-wp-body .ext-wp-list {
+  margin-bottom: 1.15rem;
+}
+
+.ext-wp-body .ext-figure {
+  margin: 0 0 0.35rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.ext-wp-body .ext-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  border: 1px solid #e8ecef;
+}
+
+.ext-wp-body .ext-figure--resized img {
+  max-width: 100%;
+}
+
+/* eBay SYNC 2.0 — wide workflow strip (7 panels in one image) */
+.ext-wp-body .ext-figure img[src*="12-sync-ebay-order-workflow"] {
+  border: none;
+}
+
+.ext-wp-body p:empty {
+  display: none;
+  margin: 0;
+}
+
+.ext-post-shell .post-meta-line {
+  border-bottom: none;
+  margin-bottom: 1rem;
+  padding-bottom: 0;
+}
+
+.ext-post-shell .featured-with-date {
+  margin-bottom: 2rem;
+}

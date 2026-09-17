@@ -1,0 +1,32 @@
+.back-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1040;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #e7e9ec;
+  background: #fff;
+  color: #9aa2ac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.back-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-top:hover {
+  color: #3d8c8c;
+  border-color: #4fa6a6;
+}

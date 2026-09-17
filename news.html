@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog – Printuz LTD</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#4ca1a9;
+  --teal-2:#38a0a8;
+  --teal-dark:#317f85;
+  --ink:#20242B;
+  --muted:#6B7280;
+  --line:#E7E9EC;
+  --soft-bg:#EAF3F3;
+  --black:#111417;
+}
+body{ font-family:'Inter', sans-serif; color:var(--ink); }
+h1,h2,h3,h4,.brand-word{ font-family:'Poppins', sans-serif; }
+a{ text-decoration:none; }
+
+/* Top strip + header + nav (shared layout) */
+.top-strip{ background:var(--teal); color:#fff; font-size:.78rem; letter-spacing:.06em; text-align:center; padding:.4rem 0; font-weight:600; }
+.site-header{ background:#fff; padding:1rem 0; }
+.logo-img{ height:48px; }
+.header-search{ max-width:300px; width:100%; }
+.header-search .form-control{ border-radius:999px 0 0 999px; border-color:var(--line); border-right:none; }
+.header-search .btn{ border-radius:0 999px 999px 0; background:#fff; border:1px solid var(--line); border-left:none; color:var(--muted); }
+.login-link{ color:var(--ink); font-weight:600; letter-spacing:.04em; font-size:.85rem; }
+.login-link:hover{ color:var(--teal-dark); }
+.main-nav{ background:var(--teal); }
+.main-nav a{ color:#fff; font-weight:600; font-size:.9rem; padding:.8rem .9rem; display:inline-block; }
+.main-nav a:hover{ background:rgba(255,255,255,.12); }
+.main-nav a.active{ background:rgba(255,255,255,.18); }
+
+.news-wrap{ padding:2.5rem 0 3.5rem; min-height:60vh; }
+
+/* Sidebar */
+.sidebar-title{ font-weight:800; font-size:.95rem; letter-spacing:.04em; color:var(--ink); margin-bottom:.4rem; }
+.sidebar-title-rule{ width:34px; height:3px; background:var(--teal); margin-bottom:1.2rem; }
+.cat-list{ list-style:none; padding:0; margin:0 0 2.2rem; }
+.cat-list li{ border-bottom:1px solid var(--line); }
+.cat-list li a{
+  display:flex; justify-content:space-between; color:var(--ink); font-size:.9rem; padding:.7rem 0;
+}
+.cat-list li a:hover{ color:var(--teal-dark); }
+.cat-list li a span{ color:var(--muted); font-weight:400; }
+.cat-list li a.active{ font-weight:700; color:#000; }
+.cat-list li a.active span{ color:#000; }
+
+.latest-item{ display:flex; gap:.9rem; margin-bottom:1.1rem; }
+.latest-date{
+  width:46px; height:46px; border:1px solid var(--teal); border-radius:8px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  color:var(--teal-dark); flex-shrink:0; line-height:1.1;
+}
+.latest-date .d{ font-weight:800; font-size:1rem; }
+.latest-date .m{ font-size:.62rem; letter-spacing:.05em; text-transform:uppercase; }
+.latest-item h6{ font-size:.85rem; font-weight:600; margin-bottom:.2rem; line-height:1.4; }
+.latest-item h6 a{ color:var(--ink); }
+.latest-item h6 a:hover{ color:var(--teal-dark); }
+.latest-item .comments-off{ font-size:.72rem; color:var(--muted); }
+
+.tag-pill{
+  display:inline-block; border:1px solid var(--line); border-radius:6px;
+  padding:.35rem .8rem; font-size:.78rem; color:var(--ink); margin:0 .4rem .5rem 0;
+}
+.tag-pill:hover{ border-color:var(--teal); color:var(--teal-dark); }
+
+/* Post list (feed) cards */
+.post-card{ border:1px solid var(--line); border-radius:10px; padding:1.4rem 1.6rem; margin-bottom:1.2rem; transition:border-color .15s ease, box-shadow .15s ease; }
+.post-card:hover{ border-color:var(--teal); box-shadow:0 6px 18px rgba(20,30,40,.06); }
+.post-card h3{ font-size:1.15rem; font-weight:700; margin-bottom:.3rem; }
+.post-card h3 a{ color:var(--ink); }
+.post-card h3 a:hover{ color:var(--teal-dark); }
+.post-date{ color:var(--muted); font-size:.8rem; margin-bottom:.6rem; }
+.post-excerpt{ color:var(--muted); font-size:.92rem; line-height:1.7; margin:0; overflow-wrap:anywhere; word-break:break-word; }
+
+/* Category archive grid cards */
+#app-root{ max-width:100%; overflow-x:clip; }
+.news-wrap{ overflow-x:clip; }
+.row.row-cols-md-3 > .col{ min-width:0; }
+.grid-card{
+  border:1px solid var(--line); border-radius:10px; padding:1.3rem; height:100%;
+  min-width:0; max-width:100%; overflow:hidden;
+  display:flex; flex-direction:column; transition:border-color .15s ease, box-shadow .15s ease;
+}
+.grid-card:hover{ border-color:var(--teal); box-shadow:0 6px 18px rgba(20,30,40,.06); }
+.grid-card-thumb{
+  height:120px; border-radius:8px; background:linear-gradient(135deg,var(--soft-bg),#fff);
+  border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+  color:var(--teal-dark); font-size:1.6rem; margin-bottom:1rem;
+}
+.grid-card h4{ font-size:1rem; font-weight:700; margin-bottom:.3rem; overflow-wrap:anywhere; word-break:break-word; }
+.grid-card h4 a{ color:var(--ink); overflow-wrap:anywhere; word-break:break-word; }
+.grid-card h4 a:hover{ color:var(--teal-dark); }
+.grid-card .post-excerpt{ flex-grow:1; min-width:0; }
+.post-card h3 a{ overflow-wrap:anywhere; word-break:break-word; }
+.latest-item h6 a{ overflow-wrap:anywhere; word-break:break-word; }
+
+.archive-eyebrow{ color:var(--teal-dark); font-weight:700; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; }
+.archive-title{ font-weight:800; font-size:1.6rem; margin:.3rem 0 .3rem; letter-spacing:.02em; }
+.archive-sub{ color:var(--muted); font-size:.92rem; margin-bottom:2rem; }
+
+.empty-state{
+  border:1px dashed var(--line); border-radius:10px; padding:3rem 1.5rem; text-align:center; color:var(--muted);
+}
+
+/* Pagination */
+.news-pagination{ display:flex; justify-content:center; gap:.5rem; margin-top:2.5rem; flex-wrap:wrap; }
+.page-num{
+  width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center; font-size:.85rem; color:var(--ink); background:#fff;
+}
+.page-num:hover{ border-color:var(--teal); color:var(--teal-dark); }
+.page-num.active{ background:var(--teal); border-color:var(--teal); color:#fff; }
+.page-dots{ display:flex; align-items:center; color:var(--muted); font-size:.85rem; padding:0 .15rem; }
+.news-pagination-wrap{ margin-top:2rem; max-width:100%; }
+.news-pagination-summary{ text-align:center; font-size:.85rem; color:var(--muted); margin:0 0 .65rem; }
+@media (min-width:768px){ .news-pagination-summary{ display:none; } }
+@media (max-width:767px){
+  .news-main-col{ margin-bottom:.5rem; }
+  .news-sidebar-col{ margin-top:.25rem; padding-top:1.25rem; border-top:1px solid var(--line); }
+  .news-pagination{ gap:.35rem; margin-top:0; max-width:100%; }
+  .page-num{ width:40px; height:40px; font-size:.82rem; }
+  .archive-title{ font-size:1.25rem; overflow-wrap:anywhere; }
+}
+
+/* Single post page */
+.single-post-wrap{ max-width:900px; margin:0 auto; background:#fff; }
+.category-badge{
+  display:inline-block; background:var(--soft-bg); color:var(--teal-dark);
+  font-weight:700; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase;
+  border-radius:6px; padding:.4rem .8rem; margin-bottom:1rem;
+}
+.category-badge:hover{ background:var(--teal); color:#fff; }
+.post-title{ font-weight:800; font-size:clamp(1.6rem,3.5vw,2.3rem); line-height:1.25; margin-bottom:1rem; }
+.post-meta{
+  display:flex; align-items:center; gap:.5rem; color:var(--muted); font-size:.85rem;
+  padding-bottom:1.3rem; margin-bottom:2rem; border-bottom:1px solid var(--line);
+  text-transform:uppercase; letter-spacing:.03em; flex-wrap:wrap;
+}
+.post-meta a{ color:var(--teal-dark); font-weight:700; }
+.post-meta a:hover{ text-decoration:underline; }
+.post-meta .sep{ color:var(--line); }
+.post-body h2{ font-weight:700; font-size:1.35rem; margin:2rem 0 .9rem; }
+.post-body h3{ font-weight:700; font-size:1.15rem; margin:1.6rem 0 .75rem; }
+.post-body p{ color:#3A3F47; font-size:1rem; line-height:1.85; margin-bottom:1.1rem; }
+.post-body img{ max-width:100%; height:auto; border-radius:8px; margin:1rem 0; }
+.post-body a{ color:var(--teal-dark); text-decoration:underline; }
+.post-loading{ text-align:center; padding:4rem 1rem; color:var(--muted); }
+.post-body ul, .post-body ol{ color:#3A3F47; font-size:1rem; line-height:1.85; margin-bottom:1.2rem; padding-left:1.3rem; }
+.post-body li{ margin-bottom:.35rem; }
+.post-body table{ width:100%; margin-bottom:1.4rem; border-collapse:collapse; font-size:.92rem; }
+.post-body table th{ background:var(--soft-bg); color:var(--teal-dark); text-align:left; padding:.6rem .8rem; border:1px solid var(--line); }
+.post-body table td{ padding:.6rem .8rem; border:1px solid var(--line); color:#3A3F47; }
+.post-figure{
+  border-radius:10px; border:1px solid var(--line); background:var(--soft-bg);
+  height:260px; display:flex; align-items:center; justify-content:center;
+  color:var(--teal-dark); font-size:2rem; margin:1.5rem 0;
+}
+.post-figure figcaption{ display:none; }
+
+.share-row{ display:flex; align-items:center; justify-content:center; gap:.7rem; margin:2.2rem 0 2rem; }
+.share-btn{
+  position:relative;
+  width:40px; height:40px; border-radius:50%; border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center; color:#9AA2AC; background:#fff;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.share-btn svg{ width:16px; height:16px; fill:none; stroke:currentColor; }
+.share-btn .glyph{ font-size:.78rem; font-weight:800; letter-spacing:.02em; }
+.share-btn:hover{ color:#fff; border-color:transparent; }
+.share-btn.fb:hover{ background:#3B5998; }
+.share-btn.tw:hover{ background:#1DA1F2; }
+.share-btn.em:hover{ background:#6B7280; }
+.share-btn.pin:hover{ background:#E60023; }
+.share-btn.li:hover{ background:#0A66C2; }
+.share-btn::after{
+  content: attr(data-tip);
+  position:absolute; bottom:calc(100% + 10px); left:50%; transform:translateX(-50%);
+  background:#111417; color:#fff; font-size:.72rem; font-weight:600; white-space:nowrap;
+  padding:.4rem .7rem; border-radius:6px; opacity:0; pointer-events:none;
+  transition:opacity .15s ease, transform .15s ease;
+}
+.share-btn::before{
+  content:''; position:absolute; bottom:calc(100% + 4px); left:50%; transform:translateX(-50%);
+  border:5px solid transparent; border-top-color:#111417; opacity:0; pointer-events:none;
+  transition:opacity .15s ease;
+}
+.share-btn:hover::after, .share-btn:hover::before{ opacity:1; }
+
+.author-box{
+  display:flex; gap:1.1rem; background:var(--soft-bg); border-radius:12px; padding:1.4rem;
+  margin-bottom:2.2rem; align-items:flex-start;
+}
+.author-avatar{
+  width:56px; height:56px; border-radius:50%; background:var(--teal); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.2rem; flex-shrink:0;
+}
+.author-box h6{ font-weight:700; margin-bottom:.25rem; }
+.author-box h6 a{ color:var(--ink); }
+.author-box h6 a:hover{ color:var(--teal-dark); }
+.author-box p{ color:var(--muted); font-size:.88rem; margin:0; }
+
+.post-nav{ display:flex; justify-content:space-between; gap:1rem; border-top:1px solid var(--line); padding-top:1.5rem; }
+.post-nav-item{ max-width:47%; }
+.post-nav-item .dir-label{ font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-weight:700; display:block; margin-bottom:.3rem; }
+.post-nav-item a{ color:var(--ink); font-weight:600; font-size:.92rem; line-height:1.4; }
+.post-nav-item a:hover{ color:var(--teal-dark); }
+.post-nav-item.next{ text-align:right; margin-left:auto; }
+.post-nav-placeholder{ color:var(--muted); font-size:.85rem; }
+
+.back-link{ display:inline-flex; align-items:center; gap:.4rem; color:var(--teal-dark); font-weight:600; font-size:.88rem; margin-bottom:1.5rem; }
+.back-link:hover{ text-decoration:underline; }
+
+/* Footer */
+.site-footer{ background:#fff; padding-top:2.5rem; border-top:1px solid var(--line); }
+.footer-logo{ height:52px; }
+.help-title{
+  color:var(--teal-dark); font-weight:700; font-size:.85rem; letter-spacing:.06em;
+  text-transform:uppercase; border-bottom:2px solid var(--teal); display:inline-block;
+  padding-bottom:.4rem; margin-bottom:1rem;
+}
+.site-footer a{ color:var(--ink); font-size:.92rem; }
+.site-footer a:hover{ color:var(--teal-dark); }
+.footer-address{ color:var(--muted); font-size:.9rem; line-height:1.7; }
+.footer-bottom{ border-top:1px solid var(--line); margin-top:2rem; padding:1.2rem 0; font-size:.85rem; color:var(--muted); }
+@media (max-width: 767px){
+  .post-meta{ font-size:.78rem; }
+  .post-nav{ flex-direction:column; }
+  .post-nav-item{ max-width:100%; }
+  .post-nav-item.next{ text-align:left; }
+}
+
+.sticky-header-wrap{
+  background: #fff;
+}
+.sticky-header-wrap.is-sticky{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+  animation: stickySlideDown .3s ease;
+}
+@keyframes stickySlideDown{
+  from{ transform: translateY(-100%); }
+  to{ transform: translateY(0); }
+}
+.sticky-spacer{
+  display: none;
+  height: 0;
+}
+.sticky-spacer.is-active{
+  display: block;
+}
+</style>
+<link rel="stylesheet" href="assets/site-search.css?v=5">
+<script src="assets/site-search.js?v=4" defer></script>
+<link rel="stylesheet" href="assets/site-auth.css?v=1">
+<script src="assets/site-auth.js?v=3" defer></script>
+<link href="assets/site-footer-pay.css?v=4" rel="stylesheet">
+<link href="assets/site-header-frame.css?v=11" rel="stylesheet">
+<link href="assets/site-back-top.css?v=1" rel="stylesheet">
+<link rel="stylesheet" href="assets/site-mobile-nav.css?v=2">
+<script src="assets/site-mobile-nav.js?v=1" defer></script>
+</head>
+<body>
+
+<div class="site-header-frame">
+<div class="top-strip">PRINTUZ LTD</div>
+
+<div class="sticky-header-wrap">
+<header class="site-header">
+  <div class="container d-flex align-items-center flex-wrap gap-3">
+    <a href="index.html" class="site-brand" aria-label="Printuz Fulfillment">
+      <img src="assets/logo-official.png?v=1" alt="" class="site-brand-logo" width="240" height="52">
+    </a>
+    <form class="header-search ms-md-4" role="search">
+      <input class="form-control" type="search" placeholder="Search...">
+      <button class="btn" type="submit" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <line x1="16.65" y1="16.65" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+    <a href="#login" class="login-link ms-auto">LOGIN</a>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <a href="shop.html#/category/pod-products">Catalog</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+    <a href="news.html" class="active">News</a>
+    <a href="#app">App Login</a>
+    <a href="extension.html">Extension</a>
+    <a href="recruit.html">Tuyển Dụng</a>
+  </div>
+</nav>
+</div>
+</div>
+<div class="sticky-spacer" id="stickySpacer"></div>
+
+<!-- SPA mount point: everything below is rendered/swapped by JS depending on the URL hash route -->
+<div class="container news-wrap" id="top">
+  <div id="app-root"></div>
+</div>
+
+<!-- Footer (static, never re-rendered by the router) -->
+<footer class="site-footer pb-4">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-7">
+        <a href="index.html" class="site-brand site-brand--footer mb-3" aria-label="Printuz Fulfillment">
+          <img src="assets/logo-official.png?v=1" alt="" class="site-brand-logo" width="320" height="88">
+        </a>
+        <div class="fw-bold mb-1">Printuz LTD</div>
+        <div class="text-muted mb-2" style="font-size:.9rem;">Fulfillment &amp; E-Commerce Solutions</div>
+        <div class="fw-bold mb-1" style="font-size:.85rem; letter-spacing:.06em;">ADDRESS</div>
+        <p class="footer-address mb-2">
+          73, 4C Street, Dai Phuc Residential Area,<br>
+          Binh Hung Commune, Binh Chanh District,<br>
+          Ho Chi Minh City, Vietnam
+        </p>
+        <a href="mailto:Contact@Printuz.com">Contact@Printuz.com</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="help-title">Help Center</div>
+        <ul class="list-unstyled">
+          <li class="mb-2 pb-2 border-bottom"><a href="about.html">About</a></li>
+          <li class="mb-2 pb-2 border-bottom"><a href="news.html">Blog</a></li>
+          <li class="mb-2 pb-2 border-bottom"><a href="contact.html">Contact</a></li>
+          <li class="mb-2 pb-2"><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <div>Copyright 2026 © <strong>Printuz ltd</strong></div>
+            <div class="footer-pay-badges">
+        <span class="pay-badge pay-visa">VISA</span>
+        <span class="pay-badge pay-paypal"><span class="pp-pay">Pay</span><span class="pp-pal">Pal</span></span>
+        <span class="pay-badge pay-stripe">stripe</span>
+        <span class="pay-badge pay-mastercard"><span class="mc-circles"><span class="mc-c1"></span><span class="mc-c2"></span></span><span class="mc-text">MasterCard</span></span>
+        <span class="pay-badge pay-cod">CASH ON<br>DELIVERY</span>
+      </div>
+</div>
+  </div>
+</footer>
+
+<a href="#top" class="back-top" id="backTop" aria-label="Back to top">↑</a>
+<script src="assets/site-back-top.js?v=1" defer></script>
+
+<script>
+/* ============================================================
+   Printuz News — client-side SPA router (hash-based)
+   Views: feed  |  category  |  post  |  author
+   Only #app-root is re-rendered on navigation; header/footer
+   (and the other pages: index/about/privacy/contact.html) are
+   untouched, matching a hybrid "SPA section inside a
+   multi-page site" architecture.
+   ============================================================ */
+
+(function () {
+  "use strict";
+
+  var CATEGORIES = [];
+  var AUTHORS = {};
+  var POSTS = [];
+  var TAG_CLOUD = [];
+  var POSTS_PER_PAGE = 10;
+  var TOTAL_PAGES = 1;
+  var blogReady = false;
+
+  /* ---------------- helpers ---------------- */
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+  function cleanExcerpt(text) {
+    if (!text) return "";
+    text = String(text);
+    text = text.replace(/https?:\/\/[^\s<>"']+/gi, " ");
+    text = text.replace(/\[(\s*[…\.]{1,3}\s*|\s*\.\.\.\s*)\]/gi, " ");
+    text = text.replace(/\u2026/g, " ");
+    text = text.replace(/\s+/g, " ").trim();
+    if (text.length > 240) {
+      text = text.slice(0, 237).replace(/\s+\S*$/, "").trim();
+    }
+    return text;
+  }
+  function excerptHtml(p) {
+    var raw = p.excerpt || "";
+    var t = cleanExcerpt(raw);
+    if (!t) return '<span class="text-muted">[&hellip;]</span>';
+    var alreadyEllipsis = /\[\s*…\s*\]|\[\.\.\.\]|\u2026\s*$/.test(raw);
+    return esc(t) + (alreadyEllipsis ? "" : ' <span class="text-muted">[&hellip;]</span>');
+  }
+  function categoryBySlug(slug) {
+    for (var i = 0; i < CATEGORIES.length; i++) if (CATEGORIES[i].slug === slug) return CATEGORIES[i];
+    return null;
+  }
+  function postsByCategory(slug) {
+    var cat = categoryBySlug(slug);
+    if (!cat || cat.id == null) {
+      return POSTS.filter(function (p) { return p.categorySlug === slug; });
+    }
+    return POSTS.filter(function (p) {
+      return p.categoryIds && p.categoryIds.indexOf(cat.id) !== -1;
+    });
+  }
+  function postsByAuthor(slug) {
+    return POSTS.filter(function (p) { return p.authorSlug === slug; });
+  }
+  function postsByTag(tag) {
+    var needle = String(tag).toLowerCase();
+    return POSTS.filter(function (p) {
+      if (p.tags && p.tags.length) {
+        for (var i = 0; i < p.tags.length; i++) {
+          if (String(p.tags[i]).toLowerCase() === needle) return true;
+        }
+      }
+      return (p.title + " " + p.excerpt + " " + p.categoryLabel).toLowerCase().indexOf(needle) !== -1;
+    });
+  }
+  function decodeSlug(id) {
+    var s = String(id || "");
+    try {
+      var d = decodeURIComponent(s);
+      return d || s;
+    } catch (e) {
+      return s;
+    }
+  }
+  function postHref(id) {
+    return "#/post/" + encodeURIComponent(decodeSlug(id));
+  }
+  function postIndex(id) {
+    var want = decodeSlug(id);
+    var wantEnc = String(id || "");
+    for (var i = 0; i < POSTS.length; i++) {
+      var pid = POSTS[i].id;
+      if (pid === want || pid === wantEnc || decodeSlug(pid) === want) return i;
+    }
+    return -1;
+  }
+
+  /* ---------------- sidebar (shared by feed / category / author) ---------------- */
+  function renderSidebar(activeCategorySlug) {
+    var catItems = CATEGORIES.map(function (c) {
+      var activeCls = c.slug === activeCategorySlug ? " active" : "";
+      var realCount = typeof c.count === "number" ? c.count : postsByCategory(c.slug).length;
+      return '<li><a href="#/category/' + encodeURIComponent(c.slug) + '/page/1" class="cat-link' + activeCls + '" data-slug="' + esc(c.slug) + '">' +
+        esc(c.label) + " <span>(" + realCount + ")</span></a></li>";
+    }).join("");
+
+    var latest = POSTS.slice(0, 5).map(function (p) {
+      var day = p.dateDay || "?", mon = p.dateMon || "???";
+      var extra = p.commentsOff ? '<div class="comments-off">Comments Off</div>' : "";
+      return '<div class="latest-item">' +
+        '<div class="latest-date"><span class="d">' + day + '</span><span class="m">' + mon + '</span></div>' +
+        '<div><h6 class="mb-1"><a href="' + postHref(p.id) + '">' + esc(p.title) + '</a></h6>' + extra + '</div>' +
+        '</div>';
+    }).join("");
+
+    var tags = (TAG_CLOUD.length ? TAG_CLOUD.map(function (t) { return t.label; }) : ["Amazon", "Fee", "Halloween", "Payment", "Printeres", "reseach", "Shipping", "trending"])
+      .map(function (t) { return '<a href="#/tag/' + encodeURIComponent(t) + '" class="tag-pill">' + esc(t) + '</a>'; })
+      .join("");
+
+    return (
+      '<aside class="col-lg-4 news-sidebar-col order-2 order-lg-1">' +
+        '<div class="sidebar-title">CATEGORIES</div><div class="sidebar-title-rule"></div>' +
+        '<ul class="cat-list">' + catItems + '</ul>' +
+        '<div class="sidebar-title">LATEST POSTS</div><div class="sidebar-title-rule"></div>' +
+        latest +
+        '<div class="mb-4"></div>' +
+        '<div class="sidebar-title">TAG CLOUD</div><div class="sidebar-title-rule"></div>' +
+        '<div>' + tags + '</div>' +
+      '</aside>'
+    );
+  }
+
+  function paginationPageLink(n, page, baseHash) {
+    var activeCls = n === page ? " active" : "";
+    return '<a href="' + baseHash + n + '" class="page-num' + activeCls + '">' + n + "</a>";
+  }
+
+  function renderNewsPagination(page, totalPages, baseHash) {
+    if (totalPages <= 1) return "";
+    baseHash = baseHash || "#/page/";
+    page = page > 0 ? page : 1;
+    if (page > totalPages) page = totalPages;
+
+    var prevPage = Math.max(1, page - 1);
+    var nextPage = Math.min(totalPages, page + 1);
+    var isMobile =
+      typeof window.matchMedia === "function" && window.matchMedia("(max-width: 767px)").matches;
+    /* Giống printuz.com: 1 2 3 4 … 21 22 23 (đầu + cuối, không kéo hết 870 bài) */
+    var firstBlock = isMobile ? 3 : 4;
+    var lastBlock = isMobile ? 2 : 3;
+    var compactThreshold = firstBlock + lastBlock + 2;
+
+    var pageSet = [];
+    if (totalPages <= compactThreshold) {
+      for (var i = 1; i <= totalPages; i++) pageSet.push(i);
+    } else {
+      var used = {};
+      function mark(n) {
+        if (n < 1 || n > totalPages || used[n]) return;
+        used[n] = true;
+        pageSet.push(n);
+      }
+      for (var f = 1; f <= Math.min(firstBlock, totalPages); f++) mark(f);
+      var tailStart = Math.max(totalPages - lastBlock + 1, firstBlock + 1);
+      if (page > firstBlock && page < tailStart) {
+        for (var m = page - 1; m <= page + 1; m++) mark(m);
+      }
+      for (var t = tailStart; t <= totalPages; t++) mark(t);
+      pageSet.sort(function (a, b) {
+        return a - b;
+      });
+    }
+
+    var nums = [];
+    for (var pi = 0; pi < pageSet.length; pi++) {
+      if (pi > 0 && pageSet[pi] - pageSet[pi - 1] > 1) {
+        nums.push('<span class="page-dots">&hellip;</span>');
+      }
+      nums.push(paginationPageLink(pageSet[pi], page, baseHash));
+    }
+
+    return (
+      '<div class="news-pagination-wrap">' +
+        '<p class="news-pagination-summary">Trang ' + page + " / " + totalPages + "</p>" +
+        '<nav class="news-pagination" aria-label="Blog pagination">' +
+          (page > 1 ? '<a href="' + baseHash + prevPage + '" class="page-num" aria-label="Trang trước">&lsaquo;</a>' : "") +
+          nums.join("") +
+          (page < totalPages ? '<a href="' + baseHash + nextPage + '" class="page-num" aria-label="Trang sau">&rsaquo;</a>' : "") +
+        "</nav></div>"
+    );
+  }
+
+  function renderGridCards(pagePosts) {
+    return (
+      '<div class="row row-cols-1 row-cols-md-3 g-4 news-grid">' +
+      pagePosts
+        .map(function (p) {
+          return (
+            '<div class="col"><div class="grid-card">' +
+            '<div class="grid-card-thumb" aria-hidden="true">&#128196;</div>' +
+            '<h4><a href="' + postHref(p.id) + '">' + esc(p.title) + "</a></h4>" +
+            '<div class="post-date">' + esc(p.date) + "</div>" +
+            '<p class="post-excerpt">' + excerptHtml(p) + "</p>" +
+            "</div></div>"
+          );
+        })
+        .join("") +
+      "</div>"
+    );
+  }
+
+  /* ---------------- view: News Feed ---------------- */
+  function renderFeed(page) {
+    page = page && page > 0 ? page : 1;
+    var totalPages = TOTAL_PAGES || Math.max(1, Math.ceil(POSTS.length / POSTS_PER_PAGE));
+    if (page > totalPages) page = totalPages;
+    document.title = page > 1 ? "Blog – Page " + page + " – Printuz LTD" : "Blog – Printuz LTD";
+
+    var start = (page - 1) * POSTS_PER_PAGE;
+    var pagePosts = POSTS.slice(start, start + POSTS_PER_PAGE);
+
+    var cards = pagePosts.map(function (p) {
+      return (
+        '<article class="post-card">' +
+          '<h3><a href="' + postHref(p.id) + '">' + esc(p.title) + '</a></h3>' +
+          '<div class="post-date">' + esc(p.date) + '</div>' +
+          '<p class="post-excerpt">' + excerptHtml(p) + '</p>' +
+        '</article>'
+      );
+    }).join("");
+
+    var pagination = renderNewsPagination(page, totalPages, "#/page/");
+
+    return (
+      '<div class="row g-5">' +
+        renderSidebar(null) +
+        '<div class="col-lg-8 news-main-col order-1 order-lg-2">' + cards + pagination + "</div>" +
+      "</div>"
+    );
+  }
+
+  /* ---------------- view: Category Archive ---------------- */
+  function renderCategoryArchive(slug, page) {
+    page = page && page > 0 ? page : 1;
+    var cat = categoryBySlug(slug);
+    var label = cat ? cat.label : slug.replace(/-/g, " ");
+    var posts = postsByCategory(slug);
+    var totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+    if (page > totalPages) page = totalPages;
+    document.title =
+      (page > 1 ? "Category: " + label + " – Page " + page + " – " : "Category: " + label + " – ") +
+      "Printuz LTD";
+
+    var start = (page - 1) * POSTS_PER_PAGE;
+    var pagePosts = posts.slice(start, start + POSTS_PER_PAGE);
+    var baseHash = "#/category/" + encodeURIComponent(slug) + "/page/";
+
+    var grid;
+    if (posts.length === 0) {
+      grid = '<div class="empty-state">Chưa có bài viết nào trong danh mục <strong>' + esc(label) + "</strong>.</div>";
+    } else {
+      grid = renderGridCards(pagePosts);
+    }
+
+    var pagination = renderNewsPagination(page, totalPages, baseHash);
+
+    return (
+      '<div class="row g-5">' +
+        renderSidebar(slug) +
+        '<div class="col-lg-8 news-main-col order-1 order-lg-2">' +
+          '<div class="archive-eyebrow">Category</div>' +
+          '<h1 class="archive-title">CATEGORY ARCHIVES: ' + esc(String(label).toUpperCase()) + "</h1>" +
+          '<div class="archive-sub">' + posts.length + " bài viết trong danh mục này.</div>" +
+          grid +
+          pagination +
+        "</div>" +
+      "</div>"
+    );
+  }
+
+  /* ---------------- view: Tag Archive ---------------- */
+  function renderTagArchive(tag, page) {
+    page = page && page > 0 ? page : 1;
+    var posts = postsByTag(tag);
+    var totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+    if (page > totalPages) page = totalPages;
+    document.title =
+      (page > 1 ? "Tag: " + tag + " – Page " + page + " – " : "Tag: " + tag + " – ") + "Printuz LTD";
+
+    var start = (page - 1) * POSTS_PER_PAGE;
+    var pagePosts = posts.slice(start, start + POSTS_PER_PAGE);
+    var baseHash = "#/tag/" + encodeURIComponent(tag) + "/page/";
+
+    var grid;
+    if (posts.length === 0) {
+      grid = '<div class="empty-state">Chưa có bài viết nào gắn thẻ <strong>' + esc(tag) + "</strong>.</div>";
+    } else {
+      grid = renderGridCards(pagePosts);
+    }
+
+    var pagination = renderNewsPagination(page, totalPages, baseHash);
+
+    return (
+      '<div class="row g-5">' +
+        renderSidebar(null) +
+        '<div class="col-lg-8 news-main-col order-1 order-lg-2">' +
+          '<div class="archive-eyebrow">Tag</div>' +
+          '<h1 class="archive-title">TAG: ' + esc(String(tag).toUpperCase()) + "</h1>" +
+          '<div class="archive-sub">' + posts.length + " bài viết gắn thẻ này.</div>" +
+          grid +
+          pagination +
+        "</div>" +
+      "</div>"
+    );
+  }
+
+  /* ---------------- view: Author Archive ---------------- */
+  function renderAuthorArchive(slug, page) {
+    page = page && page > 0 ? page : 1;
+    var author = AUTHORS[slug];
+    var name = author ? author.name : slug;
+    var posts = postsByAuthor(slug);
+    var totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+    if (page > totalPages) page = totalPages;
+    document.title =
+      (page > 1 ? "Author: " + name + " – Page " + page + " – " : "Author: " + name + " – ") +
+      "Printuz LTD";
+
+    var start = (page - 1) * POSTS_PER_PAGE;
+    var pagePosts = posts.slice(start, start + POSTS_PER_PAGE);
+    var baseHash = "#/author/" + encodeURIComponent(slug) + "/page/";
+
+    var grid;
+    if (posts.length === 0) {
+      grid = '<div class="empty-state">Không tìm thấy bài viết nào của <strong>' + esc(name) + "</strong>.</div>";
+    } else {
+      grid = renderGridCards(pagePosts);
+    }
+
+    var pagination = renderNewsPagination(page, totalPages, baseHash);
+
+    return (
+      '<div class="row g-5">' +
+        renderSidebar(null) +
+        '<div class="col-lg-8 news-main-col order-1 order-lg-2">' +
+          '<div class="archive-eyebrow">Author</div>' +
+          '<h1 class="archive-title">AUTHOR ARCHIVES: ' + esc(String(name).toUpperCase()) + "</h1>" +
+          (author ? '<div class="archive-sub">' + esc(author.bio) + "</div>" : "") +
+          grid +
+          pagination +
+        "</div>" +
+      "</div>"
+    );
+  }
+
+  /* ---------------- view: Single Post ---------------- */
+  function renderBlock(b) {
+    if (b.t === "h2") return "<h2>" + esc(b.c) + "</h2>";
+    if (b.t === "p") return "<p>" + esc(b.c) + "</p>";
+    if (b.t === "ul") return "<ul>" + b.items.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ul>";
+    if (b.t === "ol") return "<ol>" + b.items.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ol>";
+    if (b.t === "table") {
+      var head = "<tr>" + b.head.map(function (h) { return "<th>" + esc(h) + "</th>"; }).join("") + "</tr>";
+      var rows = b.rows.map(function (r) {
+        return "<tr>" + r.map(function (c) { return "<td>" + esc(c) + "</td>"; }).join("") + "</tr>";
+      }).join("");
+      return "<table><thead>" + head + "</thead><tbody>" + rows + "</tbody></table>";
+    }
+    if (b.t === "img") {
+      return '<figure class="post-figure"><span>' + b.label + '</span></figure>';
+    }
+    return "";
+  }
+
+  function renderSinglePost(id) {
+    var idx = postIndex(id);
+    if (idx === -1) {
+      document.title = "Post not found – Printuz LTD";
+      return '<div class="single-post-wrap"><a href="#/news" class="back-link">&larr; Back to News</a><div class="empty-state">Không tìm thấy bài viết này.</div></div>';
+    }
+    var p = POSTS[idx];
+    var author = AUTHORS[p.authorSlug] || { name: p.authorSlug };
+    document.title = p.title + " – Printuz LTD";
+
+    var prev = idx > 0 ? POSTS[idx - 1] : null;
+    var next = idx < POSTS.length - 1 ? POSTS[idx + 1] : null;
+
+    var body = p.contentHtml
+      ? p.contentHtml
+      : (p.content ? p.content.map(renderBlock).join("") : "");
+
+    var navHtml =
+      '<div class="post-nav">' +
+        (prev
+          ? '<div class="post-nav-item prev"><span class="dir-label">&larr; Previous</span><a href="' + postHref(prev.id) + '">' + esc(prev.title) + '</a></div>'
+          : '<div class="post-nav-item prev"><span class="post-nav-placeholder">No previous post</span></div>') +
+        (next
+          ? '<div class="post-nav-item next"><span class="dir-label">Next &rarr;</span><a href="' + postHref(next.id) + '">' + esc(next.title) + '</a></div>'
+          : '<div class="post-nav-item next"><span class="post-nav-placeholder">No next post</span></div>') +
+      '</div>';
+
+    var shareUrl = window.location.origin + window.location.pathname + postHref(p.id);
+    var fbShare = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
+    var xShare = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(p.title);
+    var pinShare = 'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(shareUrl) + '&description=' + encodeURIComponent(p.title);
+    var liShare = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+
+    var ICON_FB = '<svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>';
+    var ICON_TW = '<svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>';
+    var ICON_EM = '<svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 6l-10 7L2 6"></path></svg>';
+
+    return (
+      '<div class="single-post-wrap">' +
+        '<a href="#/news" class="back-link">&larr; Back to News</a>' +
+        '<a href="#/category/' + p.categorySlug + '" class="category-badge">' + esc(p.categoryLabel.toUpperCase()) + '</a>' +
+        '<h1 class="post-title">' + esc(p.title) + '</h1>' +
+        '<div class="post-meta">' +
+          '<span>POSTED ON ' + esc(p.date) + '</span>' +
+          '<span class="sep">&mdash;</span>' +
+          '<span>BY <a href="#/author/' + p.authorSlug + '">' + esc(author.name) + '</a></span>' +
+        '</div>' +
+        '<div class="post-body">' + body + '</div>' +
+        '<div class="share-row">' +
+          '<a href="' + fbShare + '" class="share-btn fb" data-popup="1" title="" data-tip="Share on Facebook">' + ICON_FB + '</a>' +
+          '<a href="' + xShare + '" class="share-btn tw" data-popup="1" title="" data-tip="Share on Twitter">' + ICON_TW + '</a>' +
+          '<a href="mailto:?subject=' + encodeURIComponent(p.title) + '&body=' + encodeURIComponent(shareUrl) + '" class="share-btn em" data-tip="Share by Email">' + ICON_EM + '</a>' +
+          '<a href="' + pinShare + '" class="share-btn pin" data-popup="1" title="" data-tip="Pin on Pinterest"><span class="glyph">P</span></a>' +
+          '<a href="' + liShare + '" class="share-btn li" data-popup="1" title="" data-tip="Share on LinkedIn"><span class="glyph">in</span></a>' +
+        '</div>' +
+        '<div class="author-box">' +
+          '<div class="author-avatar">' + esc(author.name.charAt(0)) + '</div>' +
+          '<div>' +
+            '<h6><a href="#/author/' + p.authorSlug + '">' + esc(author.name) + '</a></h6>' +
+            '<p>' + esc(author.bio || "") + '</p>' +
+          '</div>' +
+        '</div>' +
+        navHtml +
+      '</div>'
+    );
+  }
+
+  /* ---------------- router ---------------- */
+  function parseRoute() {
+    var hash = window.location.hash || "";
+    var m;
+    if ((m = hash.match(/^#\/category\/([^\/]+)(?:\/page\/(\d+))?$/))) {
+      return { view: "category", param: decodeURIComponent(m[1]), page: m[2] ? parseInt(m[2], 10) : 1 };
+    }
+    if ((m = hash.match(/^#\/post\/([^\/]+)$/))) {
+      var postId = m[1];
+      try {
+        postId = decodeURIComponent(m[1]);
+      } catch (e) {}
+      return { view: "post", param: postId };
+    }
+    if ((m = hash.match(/^#\/author\/([^\/]+)(?:\/page\/(\d+))?$/))) {
+      return { view: "author", param: decodeURIComponent(m[1]), page: m[2] ? parseInt(m[2], 10) : 1 };
+    }
+    if ((m = hash.match(/^#\/tag\/([^\/]+)(?:\/page\/(\d+))?$/))) {
+      return { view: "tag", param: decodeURIComponent(m[1]), page: m[2] ? parseInt(m[2], 10) : 1 };
+    }
+    if ((m = hash.match(/^#\/page\/(\d+)$/))) {
+      return { view: "feed", param: null, page: parseInt(m[1], 10) };
+    }
+    if (hash === "#/news" || hash === "") {
+      return { view: "feed", param: null, page: 1 };
+    }
+    return { view: "feed", param: null, page: 1 };
+  }
+
+  function render() {
+    var root = document.getElementById("app-root");
+    if (!blogReady) {
+      root.innerHTML = '<div class="post-loading">Đang tải blog (' + POSTS.length + ' bài)…</div>';
+      return;
+    }
+    var route = parseRoute();
+    var html;
+    if (route.view === "category") html = renderCategoryArchive(route.param, route.page);
+    else if (route.view === "post") html = renderSinglePost(route.param);
+    else if (route.view === "author") html = renderAuthorArchive(route.param, route.page);
+    else if (route.view === "tag") html = renderTagArchive(route.param, route.page);
+    else html = renderFeed(route.page || 1);
+
+    root.innerHTML = html;
+    // scroll the News section into view smoothly on every route change
+    var top = document.getElementById("top");
+    if (top) top.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  /* ---------------- share buttons: open a small centered popup window ---------------- */
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest('.share-btn[data-popup]') : null;
+    if (!btn) return;
+    e.preventDefault();
+    var url = btn.getAttribute('href');
+    var w = 600, h = 520;
+    var left = Math.max(0, (window.screen.width - w) / 2);
+    var top = Math.max(0, (window.screen.height - h) / 2);
+    window.open(
+      url,
+      'printuz-share',
+      'width=' + w + ',height=' + h + ',left=' + left + ',top=' + top +
+      ',menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=yes'
+    );
+  });
+
+  function loadBlogData() {
+    var root = document.getElementById("app-root");
+    root.innerHTML = '<div class="post-loading">Đang tải 1.000+ bài viết từ Printuz…</div>';
+    Promise.all([
+      fetch("blog/meta.json").then(function (r) { if (!r.ok) throw new Error("meta.json"); return r.json(); }),
+      fetch("blog/posts.json").then(function (r) { if (!r.ok) throw new Error("posts.json"); return r.json(); })
+    ]).then(function (res) {
+      var meta = res[0];
+      POSTS = res[1];
+      POSTS.forEach(function (p) {
+        if (p && p.id) p.id = decodeSlug(p.id);
+      });
+      CATEGORIES = meta.categories || [];
+      AUTHORS = meta.authors || {};
+      TAG_CLOUD = meta.tagCloud || [];
+      POSTS_PER_PAGE = meta.postsPerPage || 10;
+      TOTAL_PAGES = meta.totalPages || Math.max(1, Math.ceil(POSTS.length / POSTS_PER_PAGE));
+      blogReady = true;
+      render();
+    }).catch(function (err) {
+      root.innerHTML =
+        '<div class="empty-state">' +
+          'Không tải được dữ liệu blog. Hãy chạy server local (python -m http.server) và sync script.<br>' +
+          '<code style="font-size:.8rem;">python scripts/sync_blog_from_printuz.py</code><br>' +
+          '<span class="text-muted">' + esc(String(err)) + '</span>' +
+        '</div>';
+    });
+  }
+
+  window.addEventListener("hashchange", render);
+  document.addEventListener("DOMContentLoaded", loadBlogData);
+})();
+
+</script>
+
+<script>
+(function(){
+  var wrap = document.querySelector('.sticky-header-wrap');
+  var spacer = document.getElementById('stickySpacer');
+  if(!wrap || !spacer) return;
+  var threshold = 220; // px scrolled before the sticky nav pops back in
+  var ticking = false;
+
+  function onScroll(){
+    var current = window.scrollY || window.pageYOffset;
+    if(current > threshold){
+      if(!wrap.classList.contains('is-sticky')){
+        spacer.style.height = wrap.offsetHeight + 'px';
+        wrap.classList.add('is-sticky');
+        spacer.classList.add('is-active');
+      }
+    } else {
+      wrap.classList.remove('is-sticky');
+      spacer.classList.remove('is-active');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

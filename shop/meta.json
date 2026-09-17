@@ -1,0 +1,898 @@
+{
+  "source": "https://printuz.com/shop/",
+  "syncedAt": "2026-09-17T08:23:59.505502Z",
+  "totalProducts": 634,
+  "productsPerPage": 28,
+  "totalPages": 23,
+  "categories": [
+    {
+      "id": 274,
+      "slug": "2d-apparel",
+      "label": "2D Apparel",
+      "parent": 61,
+      "count": 26
+    },
+    {
+      "id": 91,
+      "slug": "accessories",
+      "label": "Accessories",
+      "parent": 361,
+      "count": 110
+    },
+    {
+      "id": 184,
+      "slug": "accessories1",
+      "label": "Accessories",
+      "parent": 61,
+      "count": 9
+    },
+    {
+      "id": 111,
+      "slug": "acrylic-plaque",
+      "label": "Acrylic Plaque",
+      "parent": 129,
+      "count": 4
+    },
+    {
+      "id": 275,
+      "slug": "aop-apparel",
+      "label": "AOP Apparel",
+      "parent": 61,
+      "count": 91
+    },
+    {
+      "id": 193,
+      "slug": "apron-home-living",
+      "label": "Apron",
+      "parent": 233,
+      "count": 2
+    },
+    {
+      "id": 87,
+      "slug": "backpacks",
+      "label": "Backpacks",
+      "parent": 86,
+      "count": 23
+    },
+    {
+      "id": 89,
+      "slug": "bag",
+      "label": "Bag",
+      "parent": 86,
+      "count": 84
+    },
+    {
+      "id": 86,
+      "slug": "bags-wallets",
+      "label": "Bags & Wallets",
+      "parent": 361,
+      "count": 118
+    },
+    {
+      "id": 364,
+      "slug": "bags-wallets-dropship-products",
+      "label": "Bags & Wallets",
+      "parent": 362,
+      "count": 1
+    },
+    {
+      "id": 119,
+      "slug": "basket",
+      "label": "Basket",
+      "parent": 277,
+      "count": 3
+    },
+    {
+      "id": 232,
+      "slug": "basket-ball",
+      "label": "Basket ball",
+      "parent": 167,
+      "count": 2
+    },
+    {
+      "id": 307,
+      "slug": "toilet",
+      "label": "Bath Room & Toilet",
+      "parent": 76,
+      "count": 5
+    },
+    {
+      "id": 363,
+      "slug": "bathroom",
+      "label": "Bathroom",
+      "parent": 362,
+      "count": 1
+    },
+    {
+      "id": 276,
+      "slug": "bed-room",
+      "label": "Bed Room",
+      "parent": 76,
+      "count": 15
+    },
+    {
+      "id": 306,
+      "slug": "bedding-set",
+      "label": "Bedding Set",
+      "parent": 276,
+      "count": 1
+    },
+    {
+      "id": 241,
+      "slug": "bible-bag",
+      "label": "Bible Bag",
+      "parent": 89,
+      "count": 8
+    },
+    {
+      "id": 100,
+      "slug": "blankets",
+      "label": "Blankets",
+      "parent": 276,
+      "count": 6
+    },
+    {
+      "id": 141,
+      "slug": "boots",
+      "label": "Boots",
+      "parent": 29,
+      "count": 4
+    },
+    {
+      "id": 308,
+      "slug": "boxing",
+      "label": "Boxing",
+      "parent": 167,
+      "count": 1
+    },
+    {
+      "id": 326,
+      "slug": "calendar",
+      "label": "Calendar",
+      "parent": 83,
+      "count": 2
+    },
+    {
+      "id": 236,
+      "slug": "candles",
+      "label": "Candles",
+      "parent": 129,
+      "count": 5
+    },
+    {
+      "id": 310,
+      "slug": "canvas",
+      "label": "Canvas",
+      "parent": 129,
+      "count": 2
+    },
+    {
+      "id": 140,
+      "slug": "canvas-shoes",
+      "label": "Canvas Shoes",
+      "parent": 29,
+      "count": 14
+    },
+    {
+      "id": 285,
+      "slug": "cap",
+      "label": "Cap",
+      "parent": 228,
+      "count": 1
+    },
+    {
+      "id": 269,
+      "slug": "car-accessories",
+      "label": "Car Accessories",
+      "parent": 91,
+      "count": 15
+    },
+    {
+      "id": 314,
+      "slug": "ceramic",
+      "label": "Ceramic",
+      "parent": 129,
+      "count": 4
+    },
+    {
+      "id": 327,
+      "slug": "christmas",
+      "label": "Christmas",
+      "parent": 129,
+      "count": 2
+    },
+    {
+      "id": 61,
+      "slug": "clothing",
+      "label": "Clothing",
+      "parent": 361,
+      "count": 142
+    },
+    {
+      "id": 88,
+      "slug": "clutchs",
+      "label": "Clutchs",
+      "parent": 86,
+      "count": 3
+    },
+    {
+      "id": 309,
+      "slug": "coaster",
+      "label": "Coaster",
+      "parent": 79,
+      "count": 3
+    },
+    {
+      "id": 155,
+      "slug": "cosmetic-bags",
+      "label": "Cosmetic Bags",
+      "parent": 89,
+      "count": 9
+    },
+    {
+      "id": 196,
+      "slug": "covers",
+      "label": "Covers",
+      "parent": 91,
+      "count": 33
+    },
+    {
+      "id": 357,
+      "slug": "crochet",
+      "label": "Crochet",
+      "parent": 362,
+      "count": 2
+    },
+    {
+      "id": 368,
+      "slug": "crochet-gift-accessories",
+      "label": "Crochet",
+      "parent": 332,
+      "count": 1
+    },
+    {
+      "id": 225,
+      "slug": "crocs",
+      "label": "Crocs",
+      "parent": 29,
+      "count": 8
+    },
+    {
+      "id": 248,
+      "slug": "crop-top",
+      "label": "Crop Top",
+      "parent": 275,
+      "count": 3
+    },
+    {
+      "id": 152,
+      "slug": "shoulder-bags",
+      "label": "Crossbody & Shoulder Bags",
+      "parent": 89,
+      "count": 14
+    },
+    {
+      "id": 366,
+      "slug": "decal-sticker",
+      "label": "Decal & Sticker",
+      "parent": 362,
+      "count": 2
+    },
+    {
+      "id": 104,
+      "slug": "decal-stickers",
+      "label": "Decal, Stickers & Covers",
+      "parent": 91,
+      "count": 9
+    },
+    {
+      "id": 129,
+      "slug": "decor",
+      "label": "Decor",
+      "parent": 76,
+      "count": 49
+    },
+    {
+      "id": 317,
+      "slug": "door-windows",
+      "label": "Door & Windows",
+      "parent": 129,
+      "count": 2
+    },
+    {
+      "id": 78,
+      "slug": "doormats",
+      "label": "Doormats",
+      "parent": 277,
+      "count": 1
+    },
+    {
+      "id": 183,
+      "slug": "drawstring-bag",
+      "label": "Drawstring Bag",
+      "parent": 89,
+      "count": 3
+    },
+    {
+      "id": 172,
+      "slug": "dresses",
+      "label": "Dresses",
+      "parent": 275,
+      "count": 16
+    },
+    {
+      "id": 79,
+      "slug": "drinkware",
+      "label": "Drinkware",
+      "parent": 76,
+      "count": 25
+    },
+    {
+      "id": 362,
+      "slug": "dropship-products",
+      "label": "Dropship Products",
+      "parent": 0,
+      "count": 6
+    },
+    {
+      "id": 266,
+      "slug": "earrings",
+      "label": "Earrings",
+      "parent": 75,
+      "count": 3
+    },
+    {
+      "id": 228,
+      "slug": "embroidery-products",
+      "label": "Embroidery Products",
+      "parent": 361,
+      "count": 5
+    },
+    {
+      "id": 204,
+      "slug": "equipment-2",
+      "label": "Equipment",
+      "parent": 91,
+      "count": 1
+    },
+    {
+      "id": 153,
+      "slug": "fanny-packs",
+      "label": "Fanny Packs",
+      "parent": 89,
+      "count": 4
+    },
+    {
+      "id": 93,
+      "slug": "flags",
+      "label": "Flags & Signs",
+      "parent": 318,
+      "count": 4
+    },
+    {
+      "id": 323,
+      "slug": "flip-flop",
+      "label": "Flip Flop",
+      "parent": 29,
+      "count": 1
+    },
+    {
+      "id": 29,
+      "slug": "footwear",
+      "label": "Footwear",
+      "parent": 361,
+      "count": 83
+    },
+    {
+      "id": 318,
+      "slug": "garden",
+      "label": "Garden",
+      "parent": 76,
+      "count": 6
+    },
+    {
+      "id": 332,
+      "slug": "gift-accessories",
+      "label": "Gift",
+      "parent": 91,
+      "count": 5
+    },
+    {
+      "id": 315,
+      "slug": "gift",
+      "label": "Gift",
+      "parent": 361,
+      "count": 1
+    },
+    {
+      "id": 316,
+      "slug": "gift-for-dad",
+      "label": "Gift For Dad",
+      "parent": 315,
+      "count": 1
+    },
+    {
+      "id": 365,
+      "slug": "hand-bags",
+      "label": "Hand Bags",
+      "parent": 364,
+      "count": 1
+    },
+    {
+      "id": 150,
+      "slug": "handbags",
+      "label": "Handbags",
+      "parent": 89,
+      "count": 13
+    },
+    {
+      "id": 207,
+      "slug": "handmade-bags",
+      "label": "handmade bags",
+      "parent": 89,
+      "count": 2
+    },
+    {
+      "id": 142,
+      "slug": "high-top",
+      "label": "High Top",
+      "parent": 29,
+      "count": 11
+    },
+    {
+      "id": 76,
+      "slug": "home-living",
+      "label": "Home & Living",
+      "parent": 361,
+      "count": 154
+    },
+    {
+      "id": 62,
+      "slug": "hoodies",
+      "label": "Hoodies",
+      "parent": 275,
+      "count": 7
+    },
+    {
+      "id": 283,
+      "slug": "hoodies-embroidery-products",
+      "label": "Hoodies",
+      "parent": 228,
+      "count": 2
+    },
+    {
+      "id": 279,
+      "slug": "hoodies-2d-apparel",
+      "label": "Hoodies",
+      "parent": 274,
+      "count": 5
+    },
+    {
+      "id": 109,
+      "slug": "jacket",
+      "label": "Jacket",
+      "parent": 275,
+      "count": 7
+    },
+    {
+      "id": 334,
+      "slug": "jacket-2d-apparel",
+      "label": "Jacket",
+      "parent": 274,
+      "count": 3
+    },
+    {
+      "id": 304,
+      "slug": "jersey",
+      "label": "Jersey",
+      "parent": 275,
+      "count": 7
+    },
+    {
+      "id": 75,
+      "slug": "jewelry",
+      "label": "Jewelry",
+      "parent": 361,
+      "count": 24
+    },
+    {
+      "id": 158,
+      "slug": "jewelry-boxes",
+      "label": "Jewelry Boxes",
+      "parent": 75,
+      "count": 1
+    },
+    {
+      "id": 112,
+      "slug": "keychain",
+      "label": "Keychain",
+      "parent": 91,
+      "count": 6
+    },
+    {
+      "id": 233,
+      "slug": "kitchen",
+      "label": "Kitchen",
+      "parent": 76,
+      "count": 18
+    },
+    {
+      "id": 130,
+      "slug": "led-light",
+      "label": "Led Light",
+      "parent": 129,
+      "count": 5
+    },
+    {
+      "id": 277,
+      "slug": "living-room",
+      "label": "Living room",
+      "parent": 76,
+      "count": 19
+    },
+    {
+      "id": 143,
+      "slug": "low-top",
+      "label": "Low Top",
+      "parent": 29,
+      "count": 17
+    },
+    {
+      "id": 325,
+      "slug": "lunch-bag-meal-pack",
+      "label": "Lunch Bag & Meal Pack",
+      "parent": 86,
+      "count": 1
+    },
+    {
+      "id": 156,
+      "slug": "lunch-bags",
+      "label": "Lunch Bags",
+      "parent": 89,
+      "count": 11
+    },
+    {
+      "id": 337,
+      "slug": "make-up",
+      "label": "Make Up",
+      "parent": 91,
+      "count": 1
+    },
+    {
+      "id": 80,
+      "slug": "mugs",
+      "label": "Mugs & Cups",
+      "parent": 79,
+      "count": 10
+    },
+    {
+      "id": 121,
+      "slug": "necklace",
+      "label": "Necklace",
+      "parent": 75,
+      "count": 13
+    },
+    {
+      "id": 83,
+      "slug": "office",
+      "label": "Office",
+      "parent": 76,
+      "count": 7
+    },
+    {
+      "id": 94,
+      "slug": "ornaments",
+      "label": "Ornaments",
+      "parent": 129,
+      "count": 16
+    },
+    {
+      "id": 311,
+      "slug": "pajama-set",
+      "label": "Pajama Set",
+      "parent": 275,
+      "count": 10
+    },
+    {
+      "id": 177,
+      "slug": "pants-leggings",
+      "label": "Pants & Leggings",
+      "parent": 275,
+      "count": 10
+    },
+    {
+      "id": 321,
+      "slug": "passport-cover",
+      "label": "Passport Cover",
+      "parent": 196,
+      "count": 2
+    },
+    {
+      "id": 176,
+      "slug": "pencil-case",
+      "label": "Pencil Case",
+      "parent": 196,
+      "count": 6
+    },
+    {
+      "id": 84,
+      "slug": "pets",
+      "label": "Pets",
+      "parent": 76,
+      "count": 4
+    },
+    {
+      "id": 113,
+      "slug": "phone-accessories",
+      "label": "Phone Accessories",
+      "parent": 91,
+      "count": 7
+    },
+    {
+      "id": 270,
+      "slug": "pickle-ball",
+      "label": "Pickle ball",
+      "parent": 167,
+      "count": 2
+    },
+    {
+      "id": 85,
+      "slug": "pillows",
+      "label": "Pillows",
+      "parent": 276,
+      "count": 2
+    },
+    {
+      "id": 361,
+      "slug": "pod-products",
+      "label": "POD Products",
+      "parent": 0,
+      "count": 613
+    },
+    {
+      "id": 71,
+      "slug": "polos",
+      "label": "Polos",
+      "parent": 275,
+      "count": 1
+    },
+    {
+      "id": 60,
+      "slug": "posters",
+      "label": "Posters",
+      "parent": 129,
+      "count": 2
+    },
+    {
+      "id": 194,
+      "slug": "puzzles",
+      "label": "Puzzles",
+      "parent": 76,
+      "count": 4
+    },
+    {
+      "id": 134,
+      "slug": "rug",
+      "label": "Rug",
+      "parent": 277,
+      "count": 6
+    },
+    {
+      "id": 168,
+      "slug": "rugby",
+      "label": "Rugby",
+      "parent": 167,
+      "count": 1
+    },
+    {
+      "id": 324,
+      "slug": "running-shoes",
+      "label": "Running Shoes",
+      "parent": 29,
+      "count": 2
+    },
+    {
+      "id": 322,
+      "slug": "sandals",
+      "label": "Sandals",
+      "parent": 29,
+      "count": 5
+    },
+    {
+      "id": 305,
+      "slug": "shirt",
+      "label": "Shirt",
+      "parent": 275,
+      "count": 3
+    },
+    {
+      "id": 97,
+      "slug": "shorts",
+      "label": "Shorts",
+      "parent": 275,
+      "count": 3
+    },
+    {
+      "id": 145,
+      "slug": "slippers",
+      "label": "Slippers",
+      "parent": 29,
+      "count": 7
+    },
+    {
+      "id": 139,
+      "slug": "sneakers",
+      "label": "Sneakers",
+      "parent": 29,
+      "count": 29
+    },
+    {
+      "id": 167,
+      "slug": "sports-equipment",
+      "label": "Sports Equipment",
+      "parent": 91,
+      "count": 9
+    },
+    {
+      "id": 240,
+      "slug": "storage-bag",
+      "label": "Storage bag & Luggage",
+      "parent": 91,
+      "count": 5
+    },
+    {
+      "id": 284,
+      "slug": "sweatshirt-embroidery-products",
+      "label": "Sweatshirt",
+      "parent": 228,
+      "count": 1
+    },
+    {
+      "id": 281,
+      "slug": "sweatshirt",
+      "label": "Sweatshirt",
+      "parent": 274,
+      "count": 5
+    },
+    {
+      "id": 72,
+      "slug": "sweatshirts",
+      "label": "Sweatshirts",
+      "parent": 275,
+      "count": 5
+    },
+    {
+      "id": 174,
+      "slug": "swimwear",
+      "label": "Swimwear",
+      "parent": 275,
+      "count": 12
+    },
+    {
+      "id": 278,
+      "slug": "t-shirt",
+      "label": "T-Shirt",
+      "parent": 274,
+      "count": 12
+    },
+    {
+      "id": 282,
+      "slug": "t-shirt-embroidery-products",
+      "label": "T-shirt",
+      "parent": 228,
+      "count": 1
+    },
+    {
+      "id": 190,
+      "slug": "table-mats",
+      "label": "Table Mats",
+      "parent": 277,
+      "count": 4
+    },
+    {
+      "id": 280,
+      "slug": "tank-top",
+      "label": "Tank Top",
+      "parent": 274,
+      "count": 1
+    },
+    {
+      "id": 73,
+      "slug": "tank-tops",
+      "label": "Tank-tops",
+      "parent": 275,
+      "count": 6
+    },
+    {
+      "id": 349,
+      "slug": "tech-accessories",
+      "label": "Tech Accessories",
+      "parent": 91,
+      "count": 8
+    },
+    {
+      "id": 151,
+      "slug": "tote-bags",
+      "label": "Tote Bags",
+      "parent": 89,
+      "count": 11
+    },
+    {
+      "id": 320,
+      "slug": "travel-bag",
+      "label": "Travel Bag",
+      "parent": 89,
+      "count": 4
+    },
+    {
+      "id": 74,
+      "slug": "tshirts",
+      "label": "Tshirts",
+      "parent": 275,
+      "count": 3
+    },
+    {
+      "id": 81,
+      "slug": "tumblers",
+      "label": "Tumblers",
+      "parent": 79,
+      "count": 10
+    },
+    {
+      "id": 188,
+      "slug": "umbrella",
+      "label": "Umbrella",
+      "parent": 91,
+      "count": 1
+    },
+    {
+      "id": 15,
+      "slug": "uncategorized",
+      "label": "Uncategorized",
+      "parent": 0,
+      "count": 20
+    },
+    {
+      "id": 178,
+      "slug": "underwears",
+      "label": "Underwears",
+      "parent": 275,
+      "count": 4
+    },
+    {
+      "id": 319,
+      "slug": "wall-clock",
+      "label": "Wall Clock",
+      "parent": 129,
+      "count": 2
+    },
+    {
+      "id": 90,
+      "slug": "wallets",
+      "label": "Wallets",
+      "parent": 86,
+      "count": 8
+    },
+    {
+      "id": 132,
+      "slug": "watch",
+      "label": "Watch",
+      "parent": 75,
+      "count": 7
+    },
+    {
+      "id": 82,
+      "slug": "water-bottles-jugs",
+      "label": "Water Bottles & Jugs",
+      "parent": 79,
+      "count": 3
+    },
+    {
+      "id": 186,
+      "slug": "yoga",
+      "label": "Yoga",
+      "parent": 167,
+      "count": 1
+    }
+  ]
+}
