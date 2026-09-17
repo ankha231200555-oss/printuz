@@ -1,0 +1,18 @@
+title=Cách Syns Product và Order từ các sàn khác về Printuz bằng Extension
+out_len=10576
+has_truoc=True
+has_giai=True
+has_fffd=False
+unmapped=
+  assets/extension/02-extract-zip-winrar.png
+  assets/extension/03-chrome-extensions-menu.png
+  assets/extension/04-chrome-developer-load-unpacked.png
+  assets/extension/05-select-extension-folder.png
+  assets/extension/06-copy-api-token-profile.png
+  assets/extension/07-paste-token-add-token.png
+  assets/extension/07-paste-token-add-token.png
+  assets/extension/08-add-product-on-listing.png
+  assets/extension/09-manager-my-product-change-product.png
+  assets/extension/10-printuz-sync-etsy-guide.png
+  assets/extension/11-sync-orders-etsy-extension.png
+  assets/extension/12-sync-ebay-order-workflow.png

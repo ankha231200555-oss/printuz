@@ -1,0 +1,15 @@
+utf8_ok=True
+bom=b'<h2'
+hex=3e43c3a163682053796e732050726f6475
+head=<h2 class="wp-block-heading ext-wp-h2">Cách Syns Product</h2>
+
+
+
+<p class="wp-block-paragraph">Trước tiên các bạn download Extension Google Chrome này về &#8211; </p>
+
+
+
+<ul class=
+fffd=False
+truoc=True
+giai=True

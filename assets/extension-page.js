@@ -142,7 +142,7 @@
     fetch("blog/meta.json").then(function (r) {
       return r.json();
     }),
-    fetch("assets/extension-body.html").then(function (r) {
+    fetch("assets/extension-body.html?v=3").then(function (r) {
       return r.text();
     }),
   ])
