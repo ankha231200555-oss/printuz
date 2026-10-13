@@ -1,0 +1,18 @@
+{
+    "Dashboard": "Bảng điều khiển",
+    "Email": "Email",
+    "Password": "Mật khẩu",
+    "Remember me": "Ghi nhớ đăng nhập",
+    "Forgot your password?": "Quên mật khẩu?",
+    "Log in": "Đăng nhập",
+    "Log Out": "Đăng xuất",
+    "Register": "Đăng ký",
+    "Name": "Họ tên",
+    "Confirm Password": "Xác nhận mật khẩu",
+    "Already registered?": "Đã có tài khoản?",
+    "Profile": "Hồ sơ",
+    "You're logged in!": "Bạn đã đăng nhập!",
+    "Email Password Reset Link": "Gửi liên kết đặt lại mật khẩu",
+    "Reset Password": "Đặt lại mật khẩu",
+    "Confirm": "Xác nhận"
+}
